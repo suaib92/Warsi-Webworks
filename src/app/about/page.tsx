@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "About Warsi WebWorks | Premium Tech Agency in Moradabad",
   description: "Learn about Warsi WebWorks, Moradabad's leading premium web development and SEO agency. Meet our expert React and Next.js developers.",
   alternates: {
-    canonical: "https://warsiwebworks.com/about",
+    canonical: "https://warsi-webworks.vercel.app/about",
   },
 };
 
@@ -16,14 +16,14 @@ export default function About() {
       "@type": "AboutPage",
       "name": "About Warsi WebWorks | Premium Tech Agency in Moradabad",
       "description": "Learn about Warsi WebWorks, Moradabad's leading premium web development and SEO agency.",
-      "url": "https://warsiwebworks.com/about"
+      "url": "https://warsi-webworks.vercel.app/about"
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Warsi WebWorks",
-      "url": "https://warsiwebworks.com",
-      "logo": "https://warsiwebworks.com/og-image.png",
+      "url": "https://warsi-webworks.vercel.app",
+      "logo": "https://warsi-webworks.vercel.app/og-image.png",
       "sameAs": [
         "https://github.com/suaibwarsi",
         "https://linkedin.com/company/warsiwebworks"

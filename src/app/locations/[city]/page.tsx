@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     title: `Website Development Company in ${cityName} | Warsi WebWorks`,
     description: `Looking for a premium web design agency in ${cityName}? Warsi WebWorks delivers blazing-fast React and ecommerce solutions for ${cityName} businesses.`,
     alternates: {
-      canonical: `https://warsiwebworks.com/locations/${city}`,
+      canonical: `https://warsi-webworks.vercel.app/locations/${city}`,
     },
   };
 }
@@ -42,9 +42,9 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": `Warsi WebWorks - ${cityName} Web Design`,
-      "image": "https://warsiwebworks.com/og-image.png",
-      "@id": `https://warsiwebworks.com/locations/${city}`,
-      "url": `https://warsiwebworks.com/locations/${city}`,
+      "image": "https://warsi-webworks.vercel.app/og-image.png",
+      "@id": `https://warsi-webworks.vercel.app/locations/${city}`,
+      "url": `https://warsi-webworks.vercel.app/locations/${city}`,
       "telephone": "+917078719621",
       "address": {
         "@type": "PostalAddress",

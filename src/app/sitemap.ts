@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://warsiwebworks.com'
+  const base = 'https://warsi-webworks.vercel.app'
   const cities = [
     "rampur", "sambhal", "amroha", "bijnor", "kashipur", 
     "rudrapur", "bareilly", "haldwani", "gajraula", "chandausi", 

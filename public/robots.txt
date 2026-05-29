@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://warsiwebworks.com/sitemap.xml
+Sitemap: https://warsi-webworks.vercel.app/sitemap.xml

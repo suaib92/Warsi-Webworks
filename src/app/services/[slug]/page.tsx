@@ -195,7 +195,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `Best ${s.title} in Moradabad | Warsi WebWorks`, 
     description: s.desc,
     alternates: {
-      canonical: `https://warsiwebworks.com/services/${slug}`
+      canonical: `https://warsi-webworks.vercel.app/services/${slug}`
     }
   };
 }
@@ -217,19 +217,19 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://warsiwebworks.com"
+          "item": "https://warsi-webworks.vercel.app"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://warsiwebworks.com/services"
+          "item": "https://warsi-webworks.vercel.app/services"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": s.title,
-          "item": `https://warsiwebworks.com/services/${slug}`
+          "item": `https://warsi-webworks.vercel.app/services/${slug}`
         }
       ]
     },
@@ -241,7 +241,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
       "provider": {
         "@type": "ProfessionalService",
         "name": "Warsi WebWorks",
-        "url": "https://warsiwebworks.com",
+        "url": "https://warsi-webworks.vercel.app",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Moradabad",

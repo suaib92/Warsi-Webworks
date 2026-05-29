@@ -103,7 +103,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${p.title} - ${p.tag} Web Development Case Study | Warsi WebWorks`, 
     description: `See how Warsi WebWorks built a high-performance Next.js application for ${p.title}, increasing their conversions and local search visibility.`,
     alternates: {
-      canonical: `https://warsiwebworks.com/portfolio/${slug}`,
+      canonical: `https://warsi-webworks.vercel.app/portfolio/${slug}`,
     }
   };
 }

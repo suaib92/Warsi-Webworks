@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://warsiwebworks.com"),
+  metadataBase: new URL("https://warsi-webworks.vercel.app"),
   title: "Warsi WebWorks | Premium Digital Engineering Studio in Moradabad",
   description: "Warsi WebWorks is a premium digital engineering studio. We build world-class websites, ecommerce stores, and mobile apps for modern brands in Moradabad.",
   keywords: ["Website Development Company Moradabad", "Web Designer Moradabad", "Mobile App Development Moradabad", "SEO Services Moradabad", "Ecommerce Development Moradabad", "MERN Stack Development", "React Development"],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Warsi WebWorks | Premium Digital Engineering Studio",
     description: "Building Digital Experiences That Grow Businesses. Expert Website & Mobile App Development in Moradabad.",
-    url: "https://warsiwebworks.com",
+    url: "https://warsi-webworks.vercel.app",
     siteName: "Warsi WebWorks",
     locale: "en_US",
     type: "website",
@@ -63,9 +63,9 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "name": "Warsi WebWorks",
-      "image": "https://warsiwebworks.com/og-image.png",
-      "@id": "https://warsiwebworks.com",
-      "url": "https://warsiwebworks.com",
+      "image": "https://warsi-webworks.vercel.app/og-image.png",
+      "@id": "https://warsi-webworks.vercel.app",
+      "url": "https://warsi-webworks.vercel.app",
       "telephone": "+917078719621",
       "email": "suaib8211@gmail.com",
       "address": {
@@ -92,7 +92,7 @@ const jsonLd = {
         }
       ],
       "sameAs": [
-        "https://warsiwebworks.com",
+        "https://warsi-webworks.vercel.app",
         "https://github.com/suaibwarsi",
         "https://linkedin.com/company/warsiwebworks"
       ]
@@ -100,17 +100,17 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "name": "Warsi WebWorks",
-      "url": "https://warsiwebworks.com",
+      "url": "https://warsi-webworks.vercel.app",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://warsiwebworks.com/search?q={search_term_string}",
+        "target": "https://warsi-webworks.vercel.app/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@type": "Service",
       "serviceType": "Website Development Company",
-      "provider": { "@id": "https://warsiwebworks.com" },
+      "provider": { "@id": "https://warsi-webworks.vercel.app" },
       "areaServed": [
         { "@type": "City", "name": "Moradabad" },
         { "@type": "State", "name": "Uttar Pradesh" },
@@ -121,7 +121,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "serviceType": "Ecommerce Development",
-      "provider": { "@id": "https://warsiwebworks.com" },
+      "provider": { "@id": "https://warsi-webworks.vercel.app" },
       "areaServed": [
         { "@type": "City", "name": "Moradabad" },
         { "@type": "State", "name": "Uttar Pradesh" },
@@ -132,7 +132,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "serviceType": "Mobile App Development",
-      "provider": { "@id": "https://warsiwebworks.com" },
+      "provider": { "@id": "https://warsi-webworks.vercel.app" },
       "areaServed": [
         { "@type": "City", "name": "Moradabad" },
         { "@type": "State", "name": "Uttar Pradesh" },
@@ -143,7 +143,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "serviceType": "SEO Services",
-      "provider": { "@id": "https://warsiwebworks.com" },
+      "provider": { "@id": "https://warsi-webworks.vercel.app" },
       "areaServed": [
         { "@type": "City", "name": "Moradabad" },
         { "@type": "State", "name": "Uttar Pradesh" },

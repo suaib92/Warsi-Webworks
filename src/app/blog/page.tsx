@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Blog & Insights | Warsi WebWorks",
   description: "Read the latest insights on website development, ecommerce, React, Next.js, and SEO strategies for businesses in Moradabad and worldwide.",
   alternates: {
-    canonical: "https://warsiwebworks.com/blog",
+    canonical: "https://warsi-webworks.vercel.app/blog",
   },
 };
 
@@ -40,7 +40,7 @@ export default function BlogHub() {
     "@type": "Blog",
     "name": "Warsi WebWorks Blog",
     "description": "Insights on Web Development, SEO, and Digital Strategy.",
-    "url": "https://warsiwebworks.com/blog",
+    "url": "https://warsi-webworks.vercel.app/blog",
     "publisher": {
       "@type": "Organization",
       "name": "Warsi WebWorks"

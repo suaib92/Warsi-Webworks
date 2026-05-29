@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "Top Website Development Company in Moradabad & UP | Warsi WebWorks",
   description: "Looking for the best website developer in Moradabad? Warsi WebWorks is a premium agency specializing in React, Next.js, Ecommerce, and Mobile App Development. Serving Bareilly, Rampur, Amroha, and 12+ cities.",
   alternates: {
-    canonical: "https://warsiwebworks.com",
+    canonical: "https://warsi-webworks.vercel.app",
   },
 };
 
@@ -24,9 +24,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Warsi WebWorks",
-    image: "https://warsiwebworks.com/og-image.jpg",
-    "@id": "https://warsiwebworks.com",
-    url: "https://warsiwebworks.com",
+    image: "https://warsi-webworks.vercel.app/og-image.jpg",
+    "@id": "https://warsi-webworks.vercel.app",
+    url: "https://warsi-webworks.vercel.app",
     telephone: "+917078719621",
     address: {
       "@type": "PostalAddress",

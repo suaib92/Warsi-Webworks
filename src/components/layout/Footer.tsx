@@ -19,7 +19,7 @@ export default function Footer() {
               Premium agency building websites, apps, and digital experiences that grow businesses and establish trust.
             </p>
             <div className="flex items-center gap-4" suppressHydrationWarning>
-              <Link href="https://warsiwebworks.com" aria-label="Visit Warsi WebWorks Official Website" className="w-10 h-10 rounded-full bg-card border border-border-subtle flex items-center justify-center text-text-body hover:text-accent-light hover:border-accent-light transition-colors">
+              <Link href="https://warsi-webworks.vercel.app" aria-label="Visit Warsi WebWorks Official Website" className="w-10 h-10 rounded-full bg-card border border-border-subtle flex items-center justify-center text-text-body hover:text-accent-light hover:border-accent-light transition-colors">
                 <Globe size={18} aria-hidden="true" />
               </Link>
               <Link href="https://wa.me/917078719621" aria-label="Chat with Warsi WebWorks on WhatsApp" className="w-10 h-10 rounded-full bg-card border border-border-subtle flex items-center justify-center text-text-body hover:text-accent-light hover:border-accent-light transition-colors">
