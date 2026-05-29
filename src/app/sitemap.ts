@@ -2,6 +2,35 @@ import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://warsiwebworks.com'
+  const cities = [
+    "rampur", "sambhal", "amroha", "bijnor", "kashipur", 
+    "rudrapur", "bareilly", "haldwani", "gajraula", "chandausi", 
+    "bilari", "thakurdwara", "joya", "hasanpur"
+  ];
+
+  const services = [
+    "website-development-moradabad", 
+    "ecommerce-development-moradabad", 
+    "react-development-moradabad", 
+    "nextjs-development-moradabad", 
+    "mobile-app-development-moradabad", 
+    "seo-services-moradabad"
+  ];
+
+  const locationUrls: MetadataRoute.Sitemap = cities.map(city => ({
+    url: `${base}/locations/${city}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  const serviceUrls: MetadataRoute.Sitemap = services.map(service => ({
+    url: `${base}/services/${service}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
   return [
     {
       url: base,
@@ -21,42 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: `${base}/services/website-development`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/services/ecommerce-development`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/services/mobile-app-development`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/services/seo-services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/services/mern-applications`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${base}/services/ui-ux-design`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+    ...serviceUrls,
     {
       url: `${base}/portfolio`,
       lastModified: new Date(),
@@ -81,6 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    ...locationUrls,
     {
       url: `${base}/privacy-policy`,
       lastModified: new Date(),
