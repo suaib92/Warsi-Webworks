@@ -183,8 +183,8 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6" suppressHydrationWarning>
                   <div className="flex flex-col gap-2" suppressHydrationWarning>
-                    <label className="text-[13px] font-medium text-text-muted">Business Type</label>
-                    <select {...register("subject")} className="bg-base border border-border-subtle rounded-[8px] px-4 py-3 text-text-primary focus:outline-none focus:border-accent-light transition-colors appearance-none">
+                    <label htmlFor="subject" className="text-[13px] font-medium text-text-muted">Business Type</label>
+                    <select id="subject" {...register("subject")} className="bg-base border border-border-subtle rounded-[8px] px-4 py-3 text-text-primary focus:outline-none focus:border-accent-light transition-colors appearance-none">
                       <option value="Startup / SaaS">Startup / SaaS</option>
                       <option value="Ecommerce">Ecommerce</option>
                       <option value="Local Business">Local Business</option>
@@ -192,8 +192,8 @@ export default function Contact() {
                     </select>
                   </div>
                   <div className="flex flex-col gap-2" suppressHydrationWarning>
-                    <label className="text-[13px] font-medium text-text-muted">Project Budget</label>
-                    <select {...register("budget")} className="bg-base border border-border-subtle rounded-[8px] px-4 py-3 text-text-primary focus:outline-none focus:border-accent-light transition-colors appearance-none">
+                    <label htmlFor="budget" className="text-[13px] font-medium text-text-muted">Project Budget</label>
+                    <select id="budget" {...register("budget")} className="bg-base border border-border-subtle rounded-[8px] px-4 py-3 text-text-primary focus:outline-none focus:border-accent-light transition-colors appearance-none">
                       <option value="$1k - $5k">$1k - $5k</option>
                       <option value="$5k - $10k">$5k - $10k</option>
                       <option value="$10k - $25k">$10k - $25k</option>

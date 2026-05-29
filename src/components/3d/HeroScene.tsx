@@ -427,7 +427,7 @@ function SceneContent() {
       />
 
       {/* ── HDRI environment for realistic material reflections ── */}
-      <Environment preset="studio" />
+      <Environment preset="city" />
 
       {/* ── The sculpture ── */}
       <DigitalCortex mouse={mouse} />

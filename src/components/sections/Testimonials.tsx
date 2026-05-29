@@ -35,7 +35,22 @@ const testimonials = [
     name: "Tariq Khan",
     role: "CTO, FinApp India",
     content: "The React Native app they delivered was flawless. It performs like a truly native app and the React codebase is incredibly clean and maintainable. A world-class team.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150",
+    rating: 5
+  },
+  {
+    id: 5,
+    name: "Vikram Singh",
+    role: "Director, Singh Builders & Co",
+    content: "We needed a corporate website that reflected our 20-year legacy while looking modern. Warsi WebWorks delivered exactly that, and their SEO work got us ranking for local commercial projects within weeks.",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150",
+    rating: 5
+  },
+  {
+    id: 6,
+    name: "Sana Ansari",
+    role: "Founder, Moradabad Artisans",
+    content: "Selling authentic brass handicrafts globally required a flawless ecommerce experience. Their UI/UX design is unmatched, and our international conversion rate has literally doubled.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150",
     rating: 5
   }
 ];
@@ -108,7 +123,7 @@ export default function Testimonials() {
                     className="w-12 h-12 rounded-full object-cover border-2 border-accent/20"
                   />
                   <div>
-                    <h4 className="font-bold text-text-primary">{testimonial.name}</h4>
+                    <h3 className="font-bold text-text-primary">{testimonial.name}</h3>
                     <p className="text-sm text-text-body">{testimonial.role}</p>
                   </div>
                 </div>

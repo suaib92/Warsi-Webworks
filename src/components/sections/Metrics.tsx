@@ -43,7 +43,7 @@ export default function Metrics() {
   return (
     <section className="py-24 bg-card/20 border-y border-border/30 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay" />
+      <div className="absolute inset-0 opacity-5 mix-blend-overlay" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">

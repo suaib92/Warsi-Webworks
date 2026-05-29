@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -27,6 +27,7 @@ export default function Header() {
   ];
 
   return (
+    <>
     <motion.header
       className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
         isScrolled
@@ -76,10 +77,15 @@ export default function Header() {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Nav */}
-        {mobileMenuOpen && (
+        {/* Mobile Nav will be moved outside to prevent transform constraint */}
+      </div>
+    </motion.header>
+
+    {/* Mobile Nav */}
+    <AnimatePresence>
+      {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-base flex flex-col items-center justify-center gap-8 z-40"
+            className="fixed inset-0 bg-base/90 backdrop-blur-xl flex flex-col items-center justify-center gap-8 z-40"
             initial={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
             animate={{ opacity: 1, clipPath: "circle(150% at 100% 0)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
@@ -94,7 +100,7 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  className="text-2xl font-bold text-text-primary hover:text-accent-light transition-colors"
+                  className="text-4xl sm:text-5xl font-black tracking-tighter text-text-primary hover:text-accent transition-colors py-2 block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -105,14 +111,15 @@ export default function Header() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
+              className="mt-4 w-full px-8 flex justify-center"
             >
-              <Button size="lg" className="bg-accent hover:bg-accent-hover text-white border-none shadow-none text-[15px] font-bold rounded-[8px]" onClick={() => setMobileMenuOpen(false)}>
+              <Button size="lg" className="w-full max-w-[300px] h-14 bg-accent hover:bg-accent-hover text-white border-none shadow-[0_0_20px_rgba(var(--accent),0.3)] text-[16px] font-bold rounded-[12px]" onClick={() => setMobileMenuOpen(false)}>
                 Book Consultation
               </Button>
             </motion.div>
           </motion.div>
         )}
-      </div>
-    </motion.header>
+      </AnimatePresence>
+    </>
   );
 }

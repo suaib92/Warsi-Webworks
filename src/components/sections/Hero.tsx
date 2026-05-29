@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ArrowRight, Star, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
@@ -11,13 +12,20 @@ const HeroSceneWrapper = dynamic(() => import("@/components/3d/HeroSceneWrapper"
 });
 
 export default function Hero() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
+    checkDesktop(); // Check immediately on client mount
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-base pt-24 lg:pt-0">
       
       {/* Mobile/Tablet Fallback: Absolute ambient CSS glows behind content */}
-      <div className="absolute inset-0 lg:hidden -z-10 pointer-events-none">
-        <HeroSceneWrapper />
-      </div>
+      <div className="absolute inset-0 lg:hidden -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent/10 via-base to-base" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[90vh]">
@@ -56,25 +64,23 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
               <h1 className="text-[clamp(36px,5vw,64px)] font-black tracking-tighter leading-[1.2] text-text-primary uppercase">
-                PREMIUM WEBSITE<br />
-                DEVELOPMENT COMPANY<br />
+                WEBSITES THAT TURN<br />
                 <span className="text-text-muted">
-                  & WEB DESIGNER<br />
-                  IN MORADABAD
+                  VISITORS INTO CUSTOMERS
                 </span>
               </h1>
             </motion.div>
             
-            {/* Subheadline */}
+            {/* Subheadline (H2 for SEO) */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="mt-8"
             >
-              <p className="text-[18px] md:text-[24px] text-text-body font-medium tracking-tight max-w-2xl leading-[1.7]">
-                Premium Website Developer, Web Designer & Next.js specialist serving Moradabad and global clients. Engineering high-performance digital solutions that rank.
-              </p>
+              <h2 className="text-[18px] md:text-[24px] text-text-body font-medium tracking-tight max-w-2xl leading-[1.7]">
+                <strong className="text-text-primary font-bold">Premium Website Development Company in Moradabad.</strong> Engineering high-performance digital solutions that rank, convert, and scale.
+              </h2>
             </motion.div>
 
             {/* CTAs */}
@@ -102,6 +108,31 @@ export default function Hero() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Trust Bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-12 border-t border-border-subtle w-full max-w-2xl"
+            >
+              <div>
+                <h4 className="text-3xl font-black text-text-primary mb-1">5.0</h4>
+                <p className="text-xs text-text-muted uppercase tracking-wider font-semibold">Google Reviews</p>
+              </div>
+              <div>
+                <h4 className="text-3xl font-black text-text-primary mb-1">50+</h4>
+                <p className="text-xs text-text-muted uppercase tracking-wider font-semibold">Projects Delivered</p>
+              </div>
+              <div>
+                <h4 className="text-3xl font-black text-text-primary mb-1">6+</h4>
+                <p className="text-xs text-text-muted uppercase tracking-wider font-semibold">Years Experience</p>
+              </div>
+              <div>
+                <h4 className="text-3xl font-black text-text-primary mb-1">&lt;1h</h4>
+                <p className="text-xs text-text-muted uppercase tracking-wider font-semibold">Response Time</p>
+              </div>
+            </motion.div>
           </div>
 
           {/* Right Column: The Cortex — Premium 3D sculpture */}
@@ -110,7 +141,7 @@ export default function Hero() {
             style={{ overflow: "visible" }}
           >
             <div className="absolute inset-0 pointer-events-auto">
-              <HeroSceneWrapper />
+              {isDesktop && <HeroSceneWrapper />}
             </div>
           </div>
 
