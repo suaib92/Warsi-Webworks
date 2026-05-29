@@ -3,14 +3,20 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Star, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
 
-export default function Hero({ splineNode }: { splineNode?: React.ReactNode }) {
+const HeroSceneWrapper = dynamic(() => import("@/components/3d/HeroSceneWrapper"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full rounded-full bg-accent/5 animate-pulse blur-3xl mx-auto" />,
+});
+
+export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-base pt-24 lg:pt-0">
       
       {/* Mobile/Tablet Fallback: Absolute ambient CSS glows behind content */}
       <div className="absolute inset-0 lg:hidden -z-10 pointer-events-none">
-        {splineNode}
+        <HeroSceneWrapper />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center">
@@ -104,7 +110,7 @@ export default function Hero({ splineNode }: { splineNode?: React.ReactNode }) {
             style={{ overflow: "visible" }}
           >
             <div className="absolute inset-0 pointer-events-auto">
-              {splineNode}
+              <HeroSceneWrapper />
             </div>
           </div>
 

@@ -1,10 +1,4 @@
 import Hero from "@/components/sections/Hero";
-import dynamic from "next/dynamic";
-
-const HeroSceneWrapper = dynamic(() => import("@/components/3d/HeroSceneWrapper"), {
-  ssr: false,
-  loading: () => <div className="w-[600px] h-[600px] rounded-full bg-accent/5 animate-pulse blur-3xl mx-auto" />,
-});
 import Portfolio from "@/components/sections/Portfolio";
 import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
@@ -28,7 +22,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero splineNode={<HeroSceneWrapper />} />
+      <Hero />
       <Metrics />
       <Portfolio />
       <Services />
