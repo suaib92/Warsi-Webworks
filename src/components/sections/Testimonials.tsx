@@ -35,6 +35,7 @@ const testimonials = [
     name: "Tariq Khan",
     role: "CTO, FinApp India",
     content: "The React Native app they delivered was flawless. It performs like a truly native app and the React codebase is incredibly clean and maintainable. A world-class team.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150",
     rating: 5
   },
   {
