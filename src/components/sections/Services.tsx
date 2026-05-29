@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Code2, ShoppingCart, Smartphone, Search, Database, PenTool } from "lucide-react";
 
 const capabilities = [
@@ -50,7 +50,7 @@ const capabilities = [
   }
 ];
 
-const containerVariant = {
+const containerVariant: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -58,7 +58,7 @@ const containerVariant = {
   }
 };
 
-const itemVariant = {
+const itemVariant: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
 };
