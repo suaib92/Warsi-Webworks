@@ -10,6 +10,7 @@ import {
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
+import { useInView } from "framer-motion";
 
 // ─── Shard data ───────────────────────────────────────────────────────────────
 interface ShardData {
@@ -435,7 +436,7 @@ function SceneContent() {
       {/* ── Floating particle atmosphere ── */}
       {/* Inner micro-dust — barely visible, just enough to feel alive */}
       <Sparkles
-        count={90}
+        count={45}
         scale={[4.5, 6.5, 4.5]}
         size={0.55}
         speed={0.07}
@@ -445,7 +446,7 @@ function SceneContent() {
       />
       {/* Outer ambient field */}
       <Sparkles
-        count={40}
+        count={20}
         scale={[6.5, 8, 6.5]}
         size={0.35}
         speed={0.05}
@@ -460,6 +461,8 @@ function SceneContent() {
 // ─── Root export ──────────────────────────────────────────────────────────────
 export default function HeroScene() {
   const [mounted, setMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(containerRef, { margin: "0px" });
 
   useEffect(() => {
     setMounted(true);
@@ -468,8 +471,9 @@ export default function HeroScene() {
   if (!mounted) return null;
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
       <Canvas
+        frameloop={inView ? "always" : "demand"}
         // Camera pulled back slightly to prevent clipping during hover explosion
         camera={{ position: [0, 0, 5.6], fov: 45 }}
         gl={{

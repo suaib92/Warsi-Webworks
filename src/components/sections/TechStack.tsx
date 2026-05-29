@@ -50,14 +50,27 @@ export default function TechStack() {
           Enterprise Technologies.
         </motion.h2>
 
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-5xl mx-auto">
-          {technologies.map((tech, idx) => (
+        <motion.div 
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.05
+              }
+            }
+          }}
+          className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-5xl mx-auto"
+        >
+          {technologies.map((tech) => (
             <motion.div
               key={tech.name}
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: idx * 0.05, type: "spring", stiffness: 100 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8, y: 20 },
+                show: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+              }}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.95 }}
               className="group relative cursor-pointer"
@@ -70,7 +83,7 @@ export default function TechStack() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -50,21 +50,23 @@ const capabilities = [
   }
 ];
 
+const containerVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 }
+  }
+};
+
+const itemVariant = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
+};
+
 function CapabilityCard({ capability, index }: { capability: any; index: number }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.2 1"]
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
-
   return (
     <motion.div
-      ref={ref}
-      style={{ scale, opacity, y }}
+      variants={itemVariant}
       className="group relative p-6 bg-card border border-border-subtle rounded-[12px] overflow-hidden hover:bg-card-hover hover:border-[#6c63ff44] transition-all duration-150"
     >
       <div className="relative z-10 flex flex-col h-full">
@@ -122,11 +124,17 @@ export default function Services() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {capabilities.map((cap, idx) => (
             <CapabilityCard key={cap.id} capability={cap} index={idx} />
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>
