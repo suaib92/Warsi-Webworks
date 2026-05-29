@@ -10,6 +10,7 @@ import {
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
+import { useInView } from "framer-motion";
 
 // ─── Shard data ───────────────────────────────────────────────────────────────
 interface ShardData {
@@ -460,6 +461,10 @@ function SceneContent() {
 // ─── Root export ──────────────────────────────────────────────────────────────
 export default function HeroScene() {
   const [mounted, setMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Large margin: activates 300px before hero enters view (smooth resume on scroll-up)
+  // and only pauses when hero is 600px off the bottom (prevents boundary flicker)
+  const inView = useInView(containerRef, { margin: "300px 0px -600px 0px" });
 
   useEffect(() => {
     setMounted(true);
@@ -468,9 +473,9 @@ export default function HeroScene() {
   if (!mounted) return null;
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
       <Canvas
-        frameloop="always"
+        frameloop={inView ? "always" : "demand"}
         camera={{ position: [0, 0, 5.6], fov: 45 }}
         gl={{
           antialias: true,
