@@ -1,16 +1,14 @@
 import Hero from "@/components/sections/Hero";
 import Metrics from "@/components/sections/Metrics";
-import dynamic from "next/dynamic";
-
-const Portfolio = dynamic(() => import("@/components/sections/Portfolio"));
-const Services = dynamic(() => import("@/components/sections/Services"));
-const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
-const WhyUs = dynamic(() => import("@/components/sections/WhyUs"));
-const TechStack = dynamic(() => import("@/components/sections/TechStack"));
-const Process = dynamic(() => import("@/components/sections/Process"));
-const GoogleProfile = dynamic(() => import("@/components/sections/GoogleProfile"));
-const FAQ = dynamic(() => import("@/components/sections/FAQ"));
-const Contact = dynamic(() => import("@/components/sections/Contact"));
+import Portfolio from "@/components/sections/Portfolio";
+import Services from "@/components/sections/Services";
+import Testimonials from "@/components/sections/Testimonials";
+import WhyUs from "@/components/sections/WhyUs";
+import TechStack from "@/components/sections/TechStack";
+import Process from "@/components/sections/Process";
+import GoogleProfile from "@/components/sections/GoogleProfile";
+import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
