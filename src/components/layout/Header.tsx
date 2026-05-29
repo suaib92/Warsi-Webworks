@@ -31,8 +31,8 @@ export default function Header() {
     <motion.header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled || mobileMenuOpen
-          ? "bg-base border-b border-border-section shadow-sm"
-          : "bg-base/90 md:bg-transparent backdrop-blur-md md:backdrop-blur-none"
+          ? "bg-base/85 backdrop-blur-xl border-b border-border-section shadow-sm"
+          : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
