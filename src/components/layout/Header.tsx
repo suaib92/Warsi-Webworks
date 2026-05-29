@@ -1,0 +1,118 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  });
+
+  const navLinks = [
+    { name: "Services", href: "/services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/#contact" },
+  ];
+
+  return (
+    <motion.header
+      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
+        isScrolled
+          ? "bg-base/80 backdrop-blur-md border-b border-border-section"
+          : "bg-transparent"
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 z-50">
+          <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+            <span className="text-white font-bold text-xl leading-none">W</span>
+          </div>
+          <span className="font-bold text-xl tracking-tight text-text-primary">Warsi WebWorks</span>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-sm font-medium text-text-body hover:text-accent-light transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* CTA Button */}
+        <div className="hidden md:flex items-center gap-4">
+          <Button variant="default" className="bg-accent hover:bg-accent-hover text-white border-none shadow-none text-[14px] font-bold rounded-[8px] px-6 h-10 transition-all duration-300">
+            Book Consultation
+          </Button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden z-50 text-text-primary"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+          aria-expanded={mobileMenuOpen}
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* Mobile Nav */}
+        {mobileMenuOpen && (
+          <motion.div
+            className="fixed inset-0 bg-base flex flex-col items-center justify-center gap-8 z-40"
+            initial={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
+            animate={{ opacity: 1, clipPath: "circle(150% at 100% 0)" }}
+            exit={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            {navLinks.map((link, i) => (
+              <motion.div
+                key={link.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i }}
+              >
+                <Link
+                  href={link.href}
+                  className="text-2xl font-bold text-text-primary hover:text-accent-light transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <Button size="lg" className="bg-accent hover:bg-accent-hover text-white border-none shadow-none text-[15px] font-bold rounded-[8px]" onClick={() => setMobileMenuOpen(false)}>
+                Book Consultation
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+      </div>
+    </motion.header>
+  );
+}

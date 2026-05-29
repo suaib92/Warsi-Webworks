@@ -1,0 +1,16 @@
+{
+  "name": "Warsi WebWorks - Premium Digital Engineering Studio",
+  "short_name": "Warsi WebWorks",
+  "description": "Premium digital agency building websites, apps, and digital experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#6c63ff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
