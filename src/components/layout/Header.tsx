@@ -29,10 +29,10 @@ export default function Header() {
   return (
     <>
     <motion.header
-      className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-        isScrolled
-          ? "bg-base/80 backdrop-blur-md border-b border-border-section"
-          : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled || mobileMenuOpen
+          ? "bg-base/85 backdrop-blur-xl border-b border-border-section shadow-sm"
+          : "bg-base/60 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -85,7 +85,7 @@ export default function Header() {
     <AnimatePresence>
       {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-base/90 backdrop-blur-xl flex flex-col items-center justify-center gap-8 z-40"
+            className="fixed inset-0 bg-base/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-10 z-40"
             initial={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
             animate={{ opacity: 1, clipPath: "circle(150% at 100% 0)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
