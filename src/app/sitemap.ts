@@ -8,13 +8,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "bilari", "thakurdwara", "joya", "hasanpur"
   ];
 
-  const services = [
-    "website-development-moradabad", 
-    "ecommerce-development-moradabad", 
-    "react-development-moradabad", 
-    "nextjs-development-moradabad", 
-    "mobile-app-development-moradabad", 
-    "seo-services-moradabad"
+  const baseServices = [
+    "website-development", 
+    "ecommerce-development", 
+    "react-development", 
+    "nextjs-development", 
+    "mobile-app-development", 
+    "seo-services"
+  ];
+
+  const allCities = [
+    "moradabad", ...cities
   ];
 
   const locationUrls: MetadataRoute.Sitemap = cities.map(city => ({
@@ -24,12 +28,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const serviceUrls: MetadataRoute.Sitemap = services.map(service => ({
-    url: `${base}/services/${service}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }));
+  const serviceUrls: MetadataRoute.Sitemap = [];
+  baseServices.forEach(service => {
+    allCities.forEach(city => {
+      serviceUrls.push({
+        url: `${base}/services/${service}-${city}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    });
+  });
 
   return [
     {
