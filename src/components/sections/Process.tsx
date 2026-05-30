@@ -22,54 +22,88 @@ export default function Process() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[400vh] bg-surface">
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-        
-        <div className="container mx-auto px-6 md:px-12 mb-12 absolute top-32 left-0 right-0 z-20">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
-          >
+    <section className="bg-surface relative">
+      {/* Mobile Layout (Vertical) */}
+      <div className="md:hidden py-24 px-6 relative z-10">
+        <div className="mb-16">
+          <p className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4">
             How We Work
-          </motion.p>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold text-text-primary tracking-tighter"
-          >
+          </p>
+          <h2 className="text-4xl font-bold text-text-primary tracking-tighter">
             The Engineering Process.
-          </motion.h2>
+          </h2>
         </div>
 
-        <motion.div style={{ x }} className="flex gap-12 md:gap-24 px-6 md:px-[10vw] pt-32">
-          {steps.map((step, i) => (
-            <div key={step.id} className="relative w-[80vw] md:w-[40vw] lg:w-[30vw] flex-shrink-0 group">
-              
-              {/* Process Line */}
-              <div className="absolute top-8 left-0 right-[-3rem] md:right-[-6rem] h-[2px] bg-border-section -z-10">
-                <div className="h-full bg-accent w-0 group-hover:w-full transition-all duration-700 ease-out" />
-              </div>
-
+        <div className="flex flex-col gap-12 relative border-l-2 border-border-section ml-6 pl-8">
+          {steps.map((step) => (
+            <div key={step.id} className="relative group">
               {/* Step Node */}
-              <div className="w-16 h-16 rounded-full bg-card border-4 border-surface ring-2 ring-border-subtle flex items-center justify-center mb-12 group-hover:ring-accent-light group-hover:bg-accent-light/10 transition-all duration-300">
-                <span className="text-text-disabled group-hover:text-text-primary font-mono font-bold transition-colors">
+              <div className="absolute -left-[3.75rem] w-14 h-14 rounded-full bg-card border-4 border-surface ring-2 ring-border-subtle flex items-center justify-center group-hover:ring-accent-light group-hover:bg-accent-light/10 transition-all duration-300">
+                <span className="text-text-disabled group-hover:text-text-primary font-mono font-bold transition-colors text-sm">
                   {step.id}
                 </span>
               </div>
-
+              
               {/* Content */}
-              <div className="bg-card p-8 rounded-[12px] border border-border-subtle group-hover:bg-card-hover group-hover:border-[#6c63ff44] transition-all duration-300">
-                <h3 className="text-3xl font-bold text-text-primary mb-4">{step.title}</h3>
-                <p className="text-text-body text-lg leading-relaxed">{step.desc}</p>
+              <div className="bg-card p-6 rounded-[12px] border border-border-subtle group-hover:bg-card-hover group-hover:border-[#6c63ff44] transition-all duration-300">
+                <h3 className="text-2xl font-bold text-text-primary mb-3">{step.title}</h3>
+                <p className="text-text-body leading-relaxed">{step.desc}</p>
               </div>
-
             </div>
           ))}
-        </motion.div>
+        </div>
+      </div>
+
+      {/* Desktop Layout (Horizontal Scroll) */}
+      <div ref={targetRef} className="hidden md:block relative h-[400vh]">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+          
+          <div className="container mx-auto px-6 md:px-12 mb-12 absolute top-32 left-0 right-0 z-20">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
+            >
+              How We Work
+            </motion.p>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-6xl font-bold text-text-primary tracking-tighter"
+            >
+              The Engineering Process.
+            </motion.h2>
+          </div>
+
+          <motion.div style={{ x }} className="flex gap-12 md:gap-24 px-6 md:px-[10vw] pt-32">
+            {steps.map((step, i) => (
+              <div key={step.id} className="relative w-[80vw] md:w-[40vw] lg:w-[30vw] flex-shrink-0 group">
+                
+                {/* Process Line */}
+                <div className="absolute top-8 left-0 right-[-3rem] md:right-[-6rem] h-[2px] bg-border-section -z-10">
+                  <div className="h-full bg-accent w-0 group-hover:w-full transition-all duration-700 ease-out" />
+                </div>
+
+                {/* Step Node */}
+                <div className="w-16 h-16 rounded-full bg-card border-4 border-surface ring-2 ring-border-subtle flex items-center justify-center mb-12 group-hover:ring-accent-light group-hover:bg-accent-light/10 transition-all duration-300">
+                  <span className="text-text-disabled group-hover:text-text-primary font-mono font-bold transition-colors">
+                    {step.id}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="bg-card p-8 rounded-[12px] border border-border-subtle group-hover:bg-card-hover group-hover:border-[#6c63ff44] transition-all duration-300">
+                  <h3 className="text-3xl font-bold text-text-primary mb-4">{step.title}</h3>
+                  <p className="text-text-body text-lg leading-relaxed">{step.desc}</p>
+                </div>
+
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
