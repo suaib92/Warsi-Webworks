@@ -91,22 +91,13 @@ export default function Hero() {
               className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-12"
             >
               <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg font-semibold bg-accent hover:bg-accent-hover text-white rounded-[8px] border-none transition-all duration-300 group">
-                Book Free Call
+                Book Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg font-semibold border-border-subtle text-text-primary bg-transparent hover:bg-card hover:border-accent hover:text-accent-light rounded-[8px] transition-all duration-300 group">
                 View Work
                 <ArrowRight className="ml-2 w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </Button>
-              <div className="hidden lg:flex items-center gap-3 ml-4">
-                <div className="w-10 h-10 rounded-full bg-card border border-border-subtle flex items-center justify-center">
-                  <PhoneCall className="w-4 h-4 text-accent-light" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[11px] text-text-muted uppercase tracking-[0.08em] font-semibold">Call Us Now</span>
-                  <a href="tel:7078719621" className="text-[15px] font-bold text-text-primary hover:text-accent transition-colors">+91 7078719621</a>
-                </div>
-              </div>
             </motion.div>
 
             {/* Trust Bar */}

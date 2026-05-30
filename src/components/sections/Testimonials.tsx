@@ -3,7 +3,10 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import Image from "next/image";
+
+const getInitials = (name: string) => {
+  return name.split(" ").map((n) => n[0]).join("").toUpperCase().substring(0, 2);
+};
 
 const testimonials = [
   {
@@ -116,13 +119,9 @@ export default function Testimonials() {
                 </p>
                 
                 <div className="flex items-center gap-4 mt-auto">
-                  <Image 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 rounded-full object-cover border-2 border-accent/20"
-                  />
+                  <div className="w-12 h-12 rounded-full bg-accent/10 border-2 border-accent/20 flex items-center justify-center text-accent font-bold text-lg">
+                    {getInitials(testimonial.name)}
+                  </div>
                   <div>
                     <h3 className="font-bold text-text-primary">{testimonial.name}</h3>
                     <p className="text-sm text-text-body">{testimonial.role}</p>

@@ -24,18 +24,18 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-2xl font-bold text-text-primary mb-4">Data Retention</h2>
-            <p>We retain your inquiry data for up to 12 months after the last communication. You may request deletion at any time by emailing suaib8211@gmail.com.</p>
+            <p>We retain your inquiry data for up to 12 months after the last communication. You may request deletion at any time by emailing hello@warsiwebworks.com.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-text-primary mb-4">Your Rights</h2>
-            <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at suaib8211@gmail.com.</p>
+            <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at hello@warsiwebworks.com.</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-text-primary mb-4">Contact</h2>
             <p>For privacy-related inquiries, reach out to:</p>
-            <p className="mt-2">Warsi WebWorks, Moradabad, UP, India<br />Email: suaib8211@gmail.com</p>
+            <p className="mt-2">Warsi WebWorks, Moradabad, UP, India<br />Email: hello@warsiwebworks.com</p>
           </section>
         </div>
       </div>

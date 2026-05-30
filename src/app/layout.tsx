@@ -52,9 +52,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
-  },
 };
 
 const jsonLd = {
@@ -67,7 +64,7 @@ const jsonLd = {
       "@id": "https://warsi-webworks.vercel.app",
       "url": "https://warsi-webworks.vercel.app",
       "telephone": "+917078719621",
-      "email": "suaib8211@gmail.com",
+      "email": "hello@warsiwebworks.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Moradabad",

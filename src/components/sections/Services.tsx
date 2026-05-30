@@ -100,8 +100,25 @@ function CapabilityCard({ capability, index }: { capability: any; index: number 
 }
 
 export default function Services() {
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@graph": capabilities.map(cap => ({
+      "@type": "Service",
+      "name": cap.title,
+      "description": cap.description,
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Warsi WebWorks"
+      }
+    }))
+  };
+
   return (
     <section className="bg-base py-32 relative border-t border-border-section">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       <div className="container mx-auto px-6 md:px-12">
         
         <div className="max-w-4xl mb-24">

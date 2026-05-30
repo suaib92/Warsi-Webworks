@@ -11,30 +11,9 @@ const metrics = [
 ];
 
 function Counter({ value, suffix }: { value: number, suffix: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
-
-  useEffect(() => {
-    if (inView) {
-      let start = 0;
-      const end = value;
-      const duration = 2000;
-      const incrementTime = (duration / end) * 2;
-
-      const timer = setInterval(() => {
-        start += 1;
-        setCount(start);
-        if (start === end) clearInterval(timer);
-      }, incrementTime);
-
-      return () => clearInterval(timer);
-    }
-  }, [inView, value]);
-
   return (
-    <div ref={ref} className="text-5xl md:text-7xl font-bold text-primary mb-2 drop-shadow-[0_0_15px_rgba(var(--primary),0.5)]">
-      {count}{suffix}
+    <div className="text-5xl md:text-7xl font-bold text-primary mb-2 drop-shadow-[0_0_15px_rgba(var(--primary),0.5)]">
+      {value}{suffix}
     </div>
   );
 }

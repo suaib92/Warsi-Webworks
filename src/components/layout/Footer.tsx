@@ -38,22 +38,22 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4 text-text-primary">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/website-development" className="text-text-body hover:text-accent-light transition-colors">Website Development</Link>
+                <Link href="/services/website-development-moradabad" className="text-text-body hover:text-accent-light transition-colors">Website Development</Link>
               </li>
               <li>
-                <Link href="/services/ecommerce-development" className="text-text-body hover:text-accent-light transition-colors">Ecommerce Solutions</Link>
+                <Link href="/services/ecommerce-development-moradabad" className="text-text-body hover:text-accent-light transition-colors">Ecommerce Solutions</Link>
               </li>
               <li>
-                <Link href="/services/mobile-app-development" className="text-text-body hover:text-accent-light transition-colors">Mobile App Development</Link>
+                <Link href="/services/react-development-moradabad" className="text-text-body hover:text-accent-light transition-colors">React Development</Link>
               </li>
               <li>
-                <Link href="/services/mern-applications" className="text-text-body hover:text-accent-light transition-colors">MERN Stack Development</Link>
+                <Link href="/services/nextjs-development-moradabad" className="text-text-body hover:text-accent-light transition-colors">Next.js Development</Link>
               </li>
               <li>
-                <Link href="/services/seo-services" className="text-text-body hover:text-accent-light transition-colors">SEO Services</Link>
+                <Link href="/services/mobile-app-development-moradabad" className="text-text-body hover:text-accent-light transition-colors">Mobile App Development</Link>
               </li>
               <li>
-                <Link href="/services/ui-ux-design" className="text-text-body hover:text-accent-light transition-colors">UI/UX Design</Link>
+                <Link href="/services/seo-services-moradabad" className="text-text-body hover:text-accent-light transition-colors">SEO Services</Link>
               </li>
             </ul>
           </div>
@@ -91,7 +91,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-text-body">
                 <Mail className="w-5 h-5 text-accent-light shrink-0" aria-hidden="true" />
-                <a href="mailto:suaib8211@gmail.com" className="hover:text-accent-light transition-colors" aria-label="Email Warsi WebWorks at suaib8211@gmail.com">suaib8211@gmail.com</a>
+                <a href="mailto:hello@warsiwebworks.com" className="hover:text-accent-light transition-colors" aria-label="Email Warsi WebWorks at hello@warsiwebworks.com">hello@warsiwebworks.com</a>
               </li>
             </ul>
           </div>

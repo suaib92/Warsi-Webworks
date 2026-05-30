@@ -27,7 +27,7 @@ export default function ContactPage() {
       "@id": "https://warsi-webworks.vercel.app",
       "url": "https://warsi-webworks.vercel.app",
       "telephone": "+917078719621",
-      "email": "suaib8211@gmail.com",
+      "email": "hello@warsiwebworks.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Moradabad",
@@ -109,8 +109,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-text-primary mb-1">Email Us</h3>
-                  <a href="mailto:suaib8211@gmail.com" className="text-text-body hover:text-accent transition-colors">
-                    suaib8211@gmail.com
+                  <a href="mailto:hello@warsiwebworks.com" className="text-text-body hover:text-accent transition-colors">
+                    hello@warsiwebworks.com
                   </a>
                 </div>
               </div>
