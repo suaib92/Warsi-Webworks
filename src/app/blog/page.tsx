@@ -12,7 +12,16 @@ export const metadata: Metadata = {
 
 import { blogPosts as posts } from "@/data/blog";
 
-export default function BlogHub() {
+export default async function BlogHub(
+  props: { searchParams?: Promise<{ [key: string]: string | string[] | undefined }> }
+) {
+  const searchParams = await props.searchParams;
+  const page = typeof searchParams?.page === 'string' ? parseInt(searchParams.page) : 1;
+  const postsPerPage = 6;
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const startIndex = (page - 1) * postsPerPage;
+  const displayedPosts = posts.slice(startIndex, startIndex + postsPerPage);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -46,7 +55,7 @@ export default function BlogHub() {
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {displayedPosts.map((post) => (
             <Link 
               key={post.slug} 
               href={`/blog/${post.slug}`}
@@ -74,6 +83,41 @@ export default function BlogHub() {
             </Link>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-4 mt-16">
+            {page > 1 ? (
+              <Link 
+                href={`/blog?page=${page - 1}`}
+                className="px-6 py-3 rounded-[12px] bg-card border border-border-subtle text-text-primary font-bold hover:bg-card-hover transition-colors"
+              >
+                Previous
+              </Link>
+            ) : (
+              <div className="px-6 py-3 rounded-[12px] bg-card/50 border border-border-subtle/50 text-text-muted font-bold cursor-not-allowed">
+                Previous
+              </div>
+            )}
+            
+            <span className="text-text-body font-medium">
+              Page {page} of {totalPages}
+            </span>
+            
+            {page < totalPages ? (
+              <Link 
+                href={`/blog?page=${page + 1}`}
+                className="px-6 py-3 rounded-[12px] bg-accent text-white font-bold hover:bg-accent-light transition-colors"
+              >
+                Next
+              </Link>
+            ) : (
+              <div className="px-6 py-3 rounded-[12px] bg-accent/50 text-white/50 font-bold cursor-not-allowed">
+                Next
+              </div>
+            )}
+          </div>
+        )}
 
       </div>
     </main>
