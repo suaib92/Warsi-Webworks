@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts, getPostBySlug } from "@/data/blog";
+import { blogPosts, getPostBySlug, getRelatedPosts } from "@/data/blog";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -34,7 +34,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
-  const jsonLd = {
+  const relatedPosts = getRelatedPosts(slug, 3);
+
+  const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": post.title,
@@ -51,14 +53,33 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "url": `https://warsi-webworks.vercel.app/blog/${slug}`
   };
 
+  const faqJsonLd = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
   return (
     <main className="pt-32 pb-20 bg-base min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
-      <article className="container mx-auto px-6 md:px-12 max-w-4xl">
-        <div className="mb-10">
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
+      <article className="container mx-auto px-6 md:px-12 max-w-7xl">
+        <div className="mb-10 max-w-4xl">
           <Link href="/blog" className="text-text-muted hover:text-accent text-sm inline-block mb-8 transition-colors">
             &larr; Back to all insights
           </Link>
@@ -85,38 +106,104 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
 
-        {/* Markdown-style content area */}
-        <div 
-          className="prose prose-lg prose-invert max-w-none 
-            prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-text-primary
-            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-            prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-            prose-p:text-text-body prose-p:leading-relaxed prose-p:mb-6
-            prose-ul:text-text-body prose-ul:mb-6 prose-li:mb-2
-            prose-strong:text-text-primary
-            prose-a:text-accent hover:prose-a:text-accent-light"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-        
-        <div className="mt-16 pt-8 border-t border-border-subtle/50">
-          <h3 className="text-2xl font-bold text-text-primary mb-4">Share this insight</h3>
-          <div className="flex gap-4">
-            <a 
-              href={`https://twitter.com/intent/tweet?url=https://warsi-webworks.vercel.app/blog/${slug}&text=${encodeURIComponent(post.title)}`}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-text-muted hover:text-accent transition-colors"
-            >
-              Twitter (X)
-            </a>
-            <a 
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=https://warsi-webworks.vercel.app/blog/${slug}`}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-text-muted hover:text-accent transition-colors"
-            >
-              LinkedIn
-            </a>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Main Content Column */}
+          <div className="lg:col-span-8">
+            <div 
+              className="prose prose-lg prose-invert max-w-none 
+                prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-text-primary prose-headings:scroll-mt-24
+                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                prose-p:text-text-body prose-p:leading-relaxed prose-p:mb-6
+                prose-ul:text-text-body prose-ul:mb-6 prose-li:mb-2
+                prose-strong:text-text-primary
+                prose-a:text-accent hover:prose-a:text-accent-light"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+
+            {/* FAQs */}
+            {post.faqs && post.faqs.length > 0 && (
+              <div className="mt-16 pt-12 border-t border-border-subtle/50">
+                <h2 className="text-3xl font-bold text-text-primary mb-8 tracking-tight">Frequently Asked Questions</h2>
+                <div className="space-y-6">
+                  {post.faqs.map((faq, index) => (
+                    <div key={index} className="bg-card border border-border-subtle p-6 rounded-[12px]">
+                      <h3 className="text-xl font-bold text-text-primary mb-3">{faq.question}</h3>
+                      <p className="text-text-body leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            <div className="mt-16 pt-8 border-t border-border-subtle/50">
+              <h3 className="text-2xl font-bold text-text-primary mb-4">Share this insight</h3>
+              <div className="flex gap-4">
+                <a 
+                  href={`https://twitter.com/intent/tweet?url=https://warsi-webworks.vercel.app/blog/${slug}&text=${encodeURIComponent(post.title)}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-accent transition-colors"
+                >
+                  Twitter (X)
+                </a>
+                <a 
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://warsi-webworks.vercel.app/blog/${slug}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-accent transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Sticky Sidebar Column */}
+          <div className="lg:col-span-4 hidden lg:block">
+            <div className="sticky top-28 space-y-12">
+              
+              {/* Table of Contents */}
+              {post.tableOfContents && post.tableOfContents.length > 0 && (
+                <div className="bg-card border border-border-subtle p-6 rounded-[12px]">
+                  <h3 className="text-lg font-bold text-text-primary mb-4">Table of Contents</h3>
+                  <ul className="space-y-3">
+                    {post.tableOfContents.map((item, index) => (
+                      <li key={index} className={`${item.level === 3 ? 'ml-4' : ''}`}>
+                        <a 
+                          href={`#${item.id}`}
+                          className="text-sm text-text-body hover:text-accent transition-colors line-clamp-2"
+                        >
+                          {item.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Related Posts */}
+              {relatedPosts && relatedPosts.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-bold text-text-primary mb-6">Related Articles</h3>
+                  <div className="space-y-6">
+                    {relatedPosts.map((related) => (
+                      <Link 
+                        key={related.slug} 
+                        href={`/blog/${related.slug}`}
+                        className="group block"
+                      >
+                        <p className="text-xs text-accent font-bold uppercase tracking-wider mb-2">{related.category}</p>
+                        <h4 className="text-base font-bold text-text-primary group-hover:text-accent transition-colors leading-snug line-clamp-2">
+                          {related.title}
+                        </h4>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </div>
           </div>
         </div>
       </article>
