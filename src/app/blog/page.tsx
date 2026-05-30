@@ -10,29 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
-const posts = [
-  {
-    slug: "benefits-of-ecommerce-website-for-local-business-in-moradabad",
-    title: "Why Local Businesses in Moradabad Need an Ecommerce Website in 2026",
-    excerpt: "Discover how a custom Shopify or Next.js ecommerce platform can help your retail business scale beyond local foot traffic.",
-    category: "Ecommerce",
-    date: "May 29, 2026",
-  },
-  {
-    slug: "website-development-cost-moradabad",
-    title: "How Much Does a Custom Website Cost in Moradabad?",
-    excerpt: "A complete breakdown of website development costs, from simple landing pages to complex MERN stack applications.",
-    category: "Business",
-    date: "May 15, 2026",
-  },
-  {
-    slug: "nextjs-vs-react-for-seo",
-    title: "Next.js vs React: Which is Better for SEO?",
-    excerpt: "We analyze why Server-Side Rendering (SSR) in Next.js dominates Client-Side Rendering (CSR) when it comes to organic search rankings.",
-    category: "Engineering",
-    date: "April 22, 2026",
-  }
-];
+import { blogPosts as posts } from "@/data/blog";
 
 export default function BlogHub() {
   const jsonLd = {
