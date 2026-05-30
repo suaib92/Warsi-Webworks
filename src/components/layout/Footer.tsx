@@ -72,6 +72,9 @@ export default function Footer() {
                 <Link href="/about" className="text-text-body hover:text-accent-light transition-colors">About Us</Link>
               </li>
               <li>
+                <Link href="/blog" className="text-text-body hover:text-accent-light transition-colors">Blog</Link>
+              </li>
+              <li>
                 <Link href="/#contact" className="text-text-body hover:text-accent-light transition-colors">Contact Us</Link>
               </li>
             </ul>
