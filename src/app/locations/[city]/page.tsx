@@ -118,7 +118,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               <p className="text-text-body leading-relaxed mb-6">
                 Custom Shopify and Next.js headless ecommerce solutions built to scale. We help {cityName} retailers capture digital market share with ultra-fast storefronts that convert visitors into buyers.
               </p>
-              <Link href="/services/ecommerce-development-moradabad" className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
+              <Link href={`/services/ecommerce-development-${city}`} className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
             </div>
 
             <div className="bg-card p-8 rounded-[12px] border border-border-subtle">
@@ -127,7 +127,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               <p className="text-text-body leading-relaxed mb-6">
                 Looking for a React developer near {cityName}? We build complex, interactive web applications using the modern MERN stack and Next.js for ultimate speed and SEO performance.
               </p>
-              <Link href="/services/react-development-moradabad" className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
+              <Link href={`/services/react-development-${city}`} className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
             </div>
 
             <div className="bg-card p-8 rounded-[12px] border border-border-subtle">
@@ -136,7 +136,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               <p className="text-text-body leading-relaxed mb-6">
                 Dominate the search results in {cityName}. We implement technical SEO, Schema markup, and Google Business Profile strategies to outrank your local competitors.
               </p>
-              <Link href="/services/seo-services-moradabad" className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
+              <Link href={`/services/seo-services-${city}`} className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
             </div>
 
             <div className="bg-card p-8 rounded-[12px] border border-border-subtle">
@@ -145,7 +145,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               <p className="text-text-body leading-relaxed mb-6">
                 Native-feeling cross-platform iOS and Android applications. We bring {cityName} businesses directly into their customers' pockets with modern, fluid mobile experiences.
               </p>
-              <Link href="/services/mobile-app-development-moradabad" className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
+              <Link href={`/services/mobile-app-development-${city}`} className="text-accent font-semibold hover:underline">Learn more &rarr;</Link>
             </div>
           </div>
         </div>

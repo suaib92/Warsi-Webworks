@@ -1,4 +1,11 @@
-import type { Metadata } from "next";
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = path.join(__dirname, '../src/app/services/[slug]/page.tsx');
+let content = fs.readFileSync(targetFile, 'utf8');
+
+// The new file content
+const newContent = `import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -192,7 +199,7 @@ export async function generateStaticParams() {
   
   Object.keys(baseServices).forEach(serviceKey => {
     cities.forEach(city => {
-      params.push({ slug: `${serviceKey}-${city}` });
+      params.push({ slug: \`\${serviceKey}-\${city}\` });
     });
   });
   
@@ -202,11 +209,11 @@ export async function generateStaticParams() {
 // Helper to parse slug
 function parseSlug(slug: string) {
   // Find the matching city at the end of the slug
-  const matchedCity = cities.find(city => slug.endsWith(`-${city}`));
+  const matchedCity = cities.find(city => slug.endsWith(\`-\${city}\`));
   
   if (!matchedCity) return null;
   
-  const serviceKey = slug.replace(`-${matchedCity}`, '');
+  const serviceKey = slug.replace(\`-\${matchedCity}\`, '');
   const baseService = baseServices[serviceKey];
   
   if (!baseService) return null;
@@ -217,7 +224,7 @@ function parseSlug(slug: string) {
     ...baseService,
     citySlug: matchedCity,
     cityName: cityName,
-    h1: `${baseService.h1} ${cityName}`,
+    h1: \`\${baseService.h1} \${cityName}\`,
     desc: baseService.desc.replace(/{city}/g, cityName),
     benefits: baseService.benefits.map((b: string) => b.replace(/{city}/g, cityName)),
     serviceSlug: serviceKey
@@ -230,10 +237,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!s) return { title: "Service Not Found" };
   
   return { 
-    title: `Best ${s.title} in ${s.cityName} | Warsi WebWorks`, 
+    title: \`Best \${s.title} in \${s.cityName} | Warsi WebWorks\`, 
     description: s.desc,
     alternates: {
-      canonical: `https://warsi-webworks.vercel.app/services/${slug}`
+      canonical: \`https://warsi-webworks.vercel.app/services/\${slug}\`
     }
   };
 }
@@ -267,14 +274,14 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
           "@type": "ListItem",
           "position": 3,
           "name": s.title,
-          "item": `https://warsi-webworks.vercel.app/services/${slug}`
+          "item": \`https://warsi-webworks.vercel.app/services/\${slug}\`
         }
       ]
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": `${s.title} ${s.cityName}`,
+      "name": \`\${s.title} \${s.cityName}\`,
       "serviceType": s.title,
       "provider": {
         "@type": "ProfessionalService",
@@ -362,3 +369,6 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
     </main>
   );
 }
+\`;
+
+fs.writeFileSync(targetFile, newContent);
