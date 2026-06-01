@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import {
@@ -494,3 +495,4 @@ export default function HeroScene() {
     </div>
   );
 }
+

@@ -59,6 +59,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: `${base}/tools`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    ...[
+      "website-cost-calculator",
+      "salary-calculator",
+      "qr-code-generator",
+      "invoice-generator",
+      "business-name-generator",
+      "json-formatter",
+      "word-counter",
+      "css-gradient-generator",
+      "resume-builder",
+      "cover-letter-generator"
+    ].map(tool => ({
+      url: `${base}/tools/${tool}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     ...serviceUrls,
     {
       url: `${base}/portfolio`,

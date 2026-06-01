@@ -80,6 +80,28 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Free Tools */}
+          <div>
+            <h3 className="font-bold text-lg mb-4 text-text-primary">Free Tools</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/tools" className="text-text-body hover:text-accent-light transition-colors">All Tools Hub</Link>
+              </li>
+              <li>
+                <Link href="/tools/website-cost-calculator" className="text-text-body hover:text-accent-light transition-colors">Website Cost Calculator</Link>
+              </li>
+              <li>
+                <Link href="/tools/business-name-generator" className="text-text-body hover:text-accent-light transition-colors">Business Name Generator</Link>
+              </li>
+              <li>
+                <Link href="/tools/qr-code-generator" className="text-text-body hover:text-accent-light transition-colors">QR Code Generator</Link>
+              </li>
+              <li>
+                <Link href="/tools/salary-calculator" className="text-text-body hover:text-accent-light transition-colors">Salary Calculator</Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h3 className="font-bold text-lg mb-4 text-text-primary">Contact Us</h3>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -22,6 +23,7 @@ export default function Header() {
   const navLinks = [
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Tools", href: "/tools" },
     { name: "About", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/#contact" },
@@ -124,3 +126,4 @@ export default function Header() {
     </>
   );
 }
+

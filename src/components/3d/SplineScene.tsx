@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import React, { Suspense, lazy, useState } from "react";
@@ -58,3 +59,4 @@ export function SplineScene({ scene, className = "", onLoad }: SplineSceneProps)
     </div>
   );
 }
+

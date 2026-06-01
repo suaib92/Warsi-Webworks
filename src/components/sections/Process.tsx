@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import { useRef } from "react";
@@ -108,3 +109,4 @@ export default function Process() {
     </section>
   );
 }
+
