@@ -44,13 +44,9 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 z-50 group">
-          <div className="relative w-10 h-10 overflow-hidden flex-shrink-0">
-            <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain" priority />
-          </div>
-          <div className="flex flex-col justify-center leading-[1.1] text-text-primary">
-            <span className="font-black text-[18px] tracking-tight">Warsi</span>
-            <span className="font-medium text-[18px] tracking-tight text-text-body">WebWorks</span>
+        <Link href="/" className="flex items-center z-50 group">
+          <div className="relative w-48 h-12 overflow-hidden flex-shrink-0">
+            <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain object-left" priority />
           </div>
         </Link>
 
