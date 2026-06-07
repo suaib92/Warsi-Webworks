@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Marketing",
   "date": "July 28, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -72,7 +72,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Marketing",
   "date": "July 26, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -113,7 +113,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Engineering",
   "date": "July 24, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Business",
   "date": "July 22, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -195,7 +195,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Engineering",
   "date": "July 20, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -251,7 +251,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Engineering",
   "date": "July 18, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -287,7 +287,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Business",
   "date": "July 16, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -323,7 +323,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Engineering",
   "date": "July 14, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -364,7 +364,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Business",
   "date": "July 12, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -405,7 +405,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Marketing",
   "date": "July 10, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -455,7 +455,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Marketing",
   "date": "July 5, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -519,7 +519,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Business",
   "date": "July 2, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -603,7 +603,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Business",
   "date": "June 25, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -677,7 +677,7 @@ export const blogPosts: BlogPost[] = [
     category: "Engineering",
     date: "May 30, 2026",
     author: {
-      name: "Suaib Warsi",
+      name: "Mohd Suaib Warsi",
       role: "Lead Engineer"
     },
     tableOfContents: [
@@ -757,7 +757,7 @@ export const blogPosts: BlogPost[] = [
     category: "Business",
     date: "May 31, 2026",
     author: {
-      name: "Suaib Warsi",
+      name: "Mohd Suaib Warsi",
       role: "Lead Engineer"
     },
     tableOfContents: [
@@ -849,7 +849,7 @@ export const blogPosts: BlogPost[] = [
     category: "Marketing",
     date: "June 1, 2026",
     author: {
-      name: "Suaib Warsi",
+      name: "Mohd Suaib Warsi",
       role: "Lead Engineer"
     },
     tableOfContents: [
@@ -923,7 +923,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Marketing",
   "date": "June 3, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -972,7 +972,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Business",
   "date": "June 5, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -1016,7 +1016,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Engineering",
   "date": "June 7, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -1065,7 +1065,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Engineering",
   "date": "June 9, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -1109,7 +1109,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Engineering",
   "date": "June 12, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -1149,7 +1149,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Marketing",
   "date": "June 14, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -1189,7 +1189,7 @@ export const blogPosts: BlogPost[] = [
   "category": "Business",
   "date": "June 16, 2026",
   "author": {
-    "name": "Suaib Warsi",
+    "name": "Mohd Suaib Warsi",
     "role": "Lead Engineer"
   },
   "tableOfContents": [
@@ -1230,7 +1230,7 @@ export const blogPosts: BlogPost[] = [
     "category": "Engineering",
     "date": "June 18, 2026",
     "author": {
-      "name": "Suaib Warsi",
+      "name": "Mohd Suaib Warsi",
       "role": "Lead Engineer"
     },
     "tableOfContents": [
@@ -1260,7 +1260,7 @@ export const blogPosts: BlogPost[] = [
     "category": "Business",
     "date": "June 20, 2026",
     "author": {
-      "name": "Suaib Warsi",
+      "name": "Mohd Suaib Warsi",
       "role": "Lead Engineer"
     },
     "tableOfContents": [

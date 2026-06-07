@@ -31,7 +31,7 @@ export default function About() {
       ],
       "founder": {
         "@type": "Person",
-        "name": "Suaib Warsi",
+        "name": "Mohd Suaib Warsi",
         "jobTitle": "Founder & Lead Developer",
         "sameAs": [
           "https://github.com/suaib92"
@@ -55,7 +55,7 @@ export default function About() {
             Driving Digital Innovation from Moradabad.
           </h1>
           <p className="text-xl text-text-body leading-relaxed">
-            Warsi WebWorks is a premium digital engineering studio founded by Suaib Warsi. We are recognized as the Best IT Company in Moradabad, a team of expert React developers, designers, and SEO strategists who believe great code builds great businesses.
+            Warsi WebWorks is a premium digital engineering studio founded by Mohd Suaib Warsi. We are recognized as the Best IT Company in Moradabad, a team of expert React developers, designers, and SEO strategists who believe great code builds great businesses.
           </p>
         </div>
 
@@ -81,10 +81,10 @@ export default function About() {
           <h2 className="text-3xl md:text-5xl font-bold text-text-primary tracking-tighter mb-12">Meet the Core Development Team</h2>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-accent/10 flex items-center justify-center shrink-0 overflow-hidden relative shadow-lg shadow-accent/10 border-4 border-card">
-              <Image src="/images/suaib.jpeg" alt="Suaib Warsi" fill className="object-cover object-top" />
+              <Image src="/images/suaib.jpeg" alt="Mohd Suaib Warsi" fill className="object-cover object-top" />
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-2">Suaib Warsi</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-2">Mohd Suaib Warsi</h3>
               <p className="text-accent font-semibold mb-4">Founder & Lead Developer</p>
               <p className="text-text-body text-lg leading-relaxed">
                 With years of experience in full-stack development, Suaib founded Warsi WebWorks to bridge 

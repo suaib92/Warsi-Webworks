@@ -77,7 +77,7 @@ const jsonLd = {
       ],
       "founder": {
         "@type": "Person",
-        "name": "Suaib Warsi",
+        "name": "Mohd Suaib Warsi",
         "url": "https://www.linkedin.com/in/mohd-suaib-warsi/",
         "jobTitle": "Lead Engineer"
       },
