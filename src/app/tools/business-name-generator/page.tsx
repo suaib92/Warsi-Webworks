@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import BusinessNameGenerator from '@/components/tools/BusinessNameGenerator';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free Business Name Generator | Startup Name Ideas',
   description: 'Generate brandable, unique business names instantly. Enter a seed keyword and your industry to get over 50 available naming ideas.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/business-name-generator',
+    canonical: 'https://warsiwebworks.com/tools/business-name-generator',
   }
 };
 
@@ -73,6 +75,9 @@ export default function BusinessNameGeneratorPage() {
         <BusinessNameGenerator />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "business name generator", url: "/tools/business-name-generator" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="business-name" relatedToolIds={['website-cost', 'invoice', 'qr-code', 'word-counter', 'cover-letter']} />
       </div>
@@ -142,6 +147,9 @@ export default function BusinessNameGeneratorPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="business-name-generator" />
+      </div>
     </>
   );
 }

@@ -9,13 +9,14 @@ import Process from "@/components/sections/Process";
 import GoogleProfile from "@/components/sections/GoogleProfile";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
+import InternalLinks from "@/components/seo/InternalLinks";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Top Website Development Company in Moradabad & UP | Warsi WebWorks",
   description: "Looking for the best website developer in Moradabad? Warsi WebWorks is a premium agency specializing in React, Next.js, Ecommerce, and Mobile App Development. Serving Bareilly, Rampur, Amroha, and 12+ cities.",
   alternates: {
-    canonical: "https://warsi-webworks.vercel.app",
+    canonical: "https://warsiwebworks.com",
   },
 };
 
@@ -24,9 +25,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Warsi WebWorks",
-    image: "https://warsi-webworks.vercel.app/og-image.jpg",
-    "@id": "https://warsi-webworks.vercel.app",
-    url: "https://warsi-webworks.vercel.app",
+    image: "https://warsiwebworks.com/og-image.jpg",
+    "@id": "https://warsiwebworks.com",
+    url: "https://warsiwebworks.com",
     telephone: "+917078719621",
     address: {
       "@type": "PostalAddress",
@@ -64,6 +65,9 @@ export default function Home() {
       <Process />
       <GoogleProfile />
       <FAQ />
+      <div className="container mx-auto px-4 md:px-6">
+        <InternalLinks category="home" />
+      </div>
       <Contact />
     </>
   );

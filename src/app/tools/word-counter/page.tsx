@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import WordCounter from '@/components/tools/WordCounter';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free Word Counter & Keyword Density Analyzer',
   description: 'Count words, characters, sentences, and calculate reading time instantly. Analyze keyword density for better SEO content optimization.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/word-counter',
+    canonical: 'https://warsiwebworks.com/tools/word-counter',
   }
 };
 
@@ -65,6 +67,9 @@ export default function WordCounterPage() {
         <WordCounter />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "word counter", url: "/tools/word-counter" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="word-counter" relatedToolIds={['json', 'salary', 'resume', 'business-name']} />
       </div>
@@ -120,6 +125,9 @@ export default function WordCounterPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="word-counter" />
+      </div>
     </>
   );
 }

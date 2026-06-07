@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "@/data/blog";
+import { applyInternalLinks } from "@/utils/internalLinker";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -21,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | Warsi WebWorks`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://warsi-webworks.vercel.app/blog/${slug}`
+      canonical: `https://warsiwebworks.com/blog/${slug}`
     }
   };
 }
@@ -44,13 +47,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "datePublished": new Date(post.date).toISOString(),
     "author": {
       "@type": "Person",
-      "name": post.author.name
+      "name": post.author.name,
+      "url": "https://www.linkedin.com/in/suaibwarsi/",
+      "jobTitle": post.author.role
     },
     "publisher": {
       "@type": "Organization",
       "name": "Warsi WebWorks"
     },
-    "url": `https://warsi-webworks.vercel.app/blog/${slug}`
+    "url": `https://warsiwebworks.com/blog/${slug}`
   };
 
   const faqJsonLd = post.faqs && post.faqs.length > 0 ? {
@@ -82,6 +87,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Main Content Column */}
           <div className="lg:col-span-8">
+            <Breadcrumbs items={[
+              { name: "Home", url: "/" },
+              { name: "Blog", url: "/blog" },
+              { name: post.category, url: `/blog/category/${post.category.toLowerCase()}` },
+              { name: post.title, url: `/blog/${post.slug}` }
+            ]} />
+
             <div className="mb-10">
               <Link href="/blog" className="text-text-muted hover:text-accent text-sm inline-block mb-8 transition-colors">
                 &larr; Back to all insights
@@ -98,15 +110,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {post.title}
               </h1>
 
-              <div className="flex items-center gap-4 py-6 border-y border-border-subtle/50 mb-10">
-                <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-bold text-xl">
-                  {post.author.name.charAt(0)}
+              <div className="bg-surface/50 rounded-[12px] p-6 mb-12 border border-border-subtle">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-xl">
+                  WWW
                 </div>
                 <div>
-                  <p className="font-bold text-text-primary">{post.author.name}</p>
-                  <p className="text-sm text-text-muted">{post.author.role}</p>
+                  <div className="font-bold text-text-primary">Warsi WebWorks Editorial Team</div>
+                  <div className="text-sm text-text-muted">Senior Digital Strategists & Engineers</div>
                 </div>
               </div>
+              <p className="text-text-body text-sm leading-relaxed">
+                Authored by the engineering and strategy team at Warsi WebWorks. We specialize in building high-performance digital architectures (React, Next.js, Headless Commerce) for businesses looking to scale globally.
+              </p>
+            </div>
+
+            {/* Share Links */}
+            <div className="flex items-center gap-4 py-8 border-t border-border-section mt-12">
             </div>
 
             <div 
@@ -118,7 +138,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 prose-ul:text-text-body prose-ul:mb-6 prose-li:mb-2
                 prose-strong:text-text-primary
                 prose-a:text-accent hover:prose-a:text-accent-light"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ __html: applyInternalLinks(post.content) }}
             />
 
             {/* FAQs */}
@@ -135,12 +155,33 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
               </div>
             )}
+
+            {/* EEAT Author Credentials Block */}
+            <div className="mt-16 pt-12 border-t border-border-subtle/50">
+              <div className="bg-card border border-border-subtle p-8 rounded-[16px] flex flex-col md:flex-row gap-8 items-start md:items-center">
+                <div className="w-24 h-24 shrink-0 rounded-full bg-accent flex items-center justify-center text-white font-bold text-4xl shadow-lg shadow-accent/20 border-4 border-card">
+                  {post.author.name.charAt(0)}
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-text-primary mb-2">About {post.author.name}</h3>
+                  <p className="text-accent font-semibold text-sm tracking-wider uppercase mb-4">{post.author.role}</p>
+                  <p className="text-text-body leading-relaxed mb-4">
+                    With over 15 years of experience engineering high-performance web applications, {post.author.name} specializes in advanced Next.js architectures, Headless Commerce, and Technical SEO. He has architected scalable digital solutions for D2C brands, B2B manufacturers, and healthcare enterprises globally.
+                  </p>
+                  <a href="https://www.linkedin.com/in/suaibwarsi/" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:text-accent-light transition-colors inline-flex items-center">
+                    Connect on LinkedIn <span className="ml-2">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
             
-            <div className="mt-16 pt-8 border-t border-border-subtle/50">
+            <InternalLinks category="blog" currentSlug={post.slug} />
+            
+            <div className="mt-12 pt-8 border-t border-border-subtle/50">
               <h3 className="text-2xl font-bold text-text-primary mb-4">Share this insight</h3>
               <div className="flex gap-4">
                 <a 
-                  href={`https://twitter.com/intent/tweet?url=https://warsi-webworks.vercel.app/blog/${slug}&text=${encodeURIComponent(post.title)}`}
+                  href={`https://twitter.com/intent/tweet?url=https://warsiwebworks.com/blog/${slug}&text=${encodeURIComponent(post.title)}`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-text-muted hover:text-accent transition-colors"
@@ -148,7 +189,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   Twitter (X)
                 </a>
                 <a 
-                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://warsi-webworks.vercel.app/blog/${slug}`}
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=https://warsiwebworks.com/blog/${slug}`}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-text-muted hover:text-accent transition-colors"
@@ -157,6 +198,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </a>
               </div>
             </div>
+          </div>
+
           </div>
 
           {/* Sticky Sidebar Column */}

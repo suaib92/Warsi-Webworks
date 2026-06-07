@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import CoverLetterGenerator from '@/components/tools/CoverLetterGenerator';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free AI Cover Letter Generator | Write Targeted Letters Fast',
   description: 'Generate highly targeted, professional cover letters tailored to the specific job you are applying for using our free AI generator tool.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/cover-letter-generator',
+    canonical: 'https://warsiwebworks.com/tools/cover-letter-generator',
   }
 };
 
@@ -65,6 +67,9 @@ export default function CoverLetterGeneratorPage() {
         <CoverLetterGenerator />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "cover letter generator", url: "/tools/cover-letter-generator" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="cover-letter" relatedToolIds={['resume', 'salary', 'word-counter', 'invoice']} />
       </div>
@@ -113,6 +118,9 @@ export default function CoverLetterGeneratorPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="cover-letter-generator" />
+      </div>
     </>
   );
 }

@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import WebsiteCostCalculator from '@/components/tools/WebsiteCostCalculator';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Website Cost Calculator | Estimate Web Development Pricing',
   description: 'Use our free website cost calculator to estimate the pricing of your next web development project. Get instant quotes for ecommerce, business, and custom apps.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/website-cost-calculator',
+    canonical: 'https://warsiwebworks.com/tools/website-cost-calculator',
   }
 };
 
@@ -73,6 +75,9 @@ export default function WebsiteCostCalculatorPage() {
         <WebsiteCostCalculator />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "website cost calculator", url: "/tools/website-cost-calculator" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="website-cost" relatedToolIds={['invoice', 'business-name', 'qr-code', 'salary', 'resume']} />
       </div>
@@ -140,6 +145,9 @@ export default function WebsiteCostCalculatorPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="website-cost-calculator" />
+      </div>
     </>
   );
 }

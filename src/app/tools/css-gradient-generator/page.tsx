@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import CssGradientGenerator from '@/components/tools/CssGradientGenerator';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free CSS Gradient Generator | Linear & Radial Backgrounds',
   description: 'Design beautiful, cross-browser compatible CSS background gradients visually. Copy the precise CSS code or Tailwind classes for your next web project.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/css-gradient-generator',
+    canonical: 'https://warsiwebworks.com/tools/css-gradient-generator',
   }
 };
 
@@ -65,6 +67,9 @@ export default function CssGradientGeneratorPage() {
         <CssGradientGenerator />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "css gradient generator", url: "/tools/css-gradient-generator" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="css-gradient" relatedToolIds={['json', 'website-cost', 'business-name']} />
       </div>
@@ -113,6 +118,9 @@ export default function CssGradientGeneratorPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="css-gradient-generator" />
+      </div>
     </>
   );
 }

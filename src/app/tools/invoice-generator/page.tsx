@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import InvoiceGenerator from '@/components/tools/InvoiceGenerator';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free Invoice Generator | Create Professional PDF Invoices',
   description: 'Create, customize, and download professional PDF invoices for free. Add taxes, line items, and your branding in seconds.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/invoice-generator',
+    canonical: 'https://warsiwebworks.com/tools/invoice-generator',
   }
 };
 
@@ -78,6 +80,9 @@ export default function InvoiceGeneratorPage() {
         <InvoiceGenerator />
       </div>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "invoice generator", url: "/tools/invoice-generator" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl print:hidden">
         <RelatedTools currentTool="invoice" relatedToolIds={['salary', 'business-name', 'website-cost']} />
       </div>
@@ -136,6 +141,9 @@ export default function InvoiceGeneratorPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="invoice-generator" />
+      </div>
     </>
   );
 }

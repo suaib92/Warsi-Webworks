@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import SalaryCalculator from '@/components/tools/SalaryCalculator';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'India Salary Calculator 2026 | Gross to Net Take Home Pay',
   description: 'Calculate your exact net take-home salary in India. Instantly deduct PF, professional tax, and income tax from your gross CTC to see your in-hand pay.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/salary-calculator',
+    canonical: 'https://warsiwebworks.com/tools/salary-calculator',
   }
 };
 
@@ -73,6 +75,9 @@ export default function SalaryCalculatorPage() {
         <SalaryCalculator />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "salary calculator", url: "/tools/salary-calculator" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="salary" relatedToolIds={['word-counter', 'resume', 'invoice', 'cover-letter']} />
       </div>
@@ -140,6 +145,9 @@ export default function SalaryCalculatorPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="salary-calculator" />
+      </div>
     </>
   );
 }

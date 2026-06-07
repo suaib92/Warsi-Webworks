@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import JsonFormatter from '@/components/tools/JsonFormatter';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free JSON Formatter & Validator | Beautify JSON Online',
   description: 'Instantly format, validate, and beautify your JSON data. Catch syntax errors easily with our fast, client-side JSON parsing tool.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/json-formatter',
+    canonical: 'https://warsiwebworks.com/tools/json-formatter',
   }
 };
 
@@ -65,6 +67,9 @@ export default function JsonFormatterPage() {
         <JsonFormatter />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "json formatter", url: "/tools/json-formatter" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="json" relatedToolIds={['css-gradient', 'word-counter', 'website-cost']} />
       </div>
@@ -108,6 +113,9 @@ export default function JsonFormatterPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="json-formatter" />
+      </div>
     </>
   );
 }

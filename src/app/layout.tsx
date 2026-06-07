@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://warsi-webworks.vercel.app"),
+  metadataBase: new URL("https://warsiwebworks.com"),
   title: "Warsi WebWorks | Premium Digital Engineering Studio in Moradabad",
   description: "Warsi WebWorks is a premium digital engineering studio. We build world-class websites, ecommerce stores, and mobile apps for modern brands in Moradabad.",
   keywords: ["Website Development Company Moradabad", "Web Designer Moradabad", "Mobile App Development Moradabad", "SEO Services Moradabad", "Ecommerce Development Moradabad", "MERN Stack Development", "React Development"],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Warsi WebWorks | Premium Digital Engineering Studio",
     description: "Building Digital Experiences That Grow Businesses. Expert Website & Mobile App Development in Moradabad.",
-    url: "https://warsi-webworks.vercel.app",
+    url: "https://warsiwebworks.com",
     siteName: "Warsi WebWorks",
     locale: "en_US",
     type: "website",
@@ -60,11 +60,34 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "name": "Warsi WebWorks",
-      "image": "https://warsi-webworks.vercel.app/og-image.png",
-      "@id": "https://warsi-webworks.vercel.app",
-      "url": "https://warsi-webworks.vercel.app",
+      "description": "Premium Digital Engineering Studio specializing in Next.js, Headless Commerce, and Technical SEO.",
+      "image": "https://warsiwebworks.com/og-image.png",
+      "@id": "https://warsiwebworks.com",
+      "url": "https://warsiwebworks.com",
       "telephone": "+917078719621",
       "email": "hello@warsiwebworks.com",
+      "knowsAbout": [
+        "Web Development",
+        "Next.js",
+        "React",
+        "Headless Commerce",
+        "Search Engine Optimization (SEO)",
+        "Mobile App Development",
+        "Digital Marketing"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Suaib Warsi",
+        "url": "https://www.linkedin.com/in/suaibwarsi/",
+        "jobTitle": "Lead Engineer"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+917078719621",
+        "contactType": "customer support",
+        "areaServed": ["IN", "US", "GB", "AE", "AU", "CA"],
+        "availableLanguage": ["en", "hi"]
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Moradabad",
@@ -89,64 +112,21 @@ const jsonLd = {
         }
       ],
       "sameAs": [
-        "https://warsi-webworks.vercel.app",
+        "https://warsiwebworks.com",
         "https://github.com/suaibwarsi",
-        "https://linkedin.com/company/warsiwebworks"
+        "https://linkedin.com/company/warsiwebworks",
+        "https://twitter.com/warsiwebworks"
       ]
     },
     {
       "@type": "WebSite",
       "name": "Warsi WebWorks",
-      "url": "https://warsi-webworks.vercel.app",
+      "url": "https://warsiwebworks.com",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://warsi-webworks.vercel.app/search?q={search_term_string}",
+        "target": "https://warsiwebworks.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Website Development Company",
-      "provider": { "@id": "https://warsi-webworks.vercel.app" },
-      "areaServed": [
-        { "@type": "City", "name": "Moradabad" },
-        { "@type": "State", "name": "Uttar Pradesh" },
-        { "@type": "Country", "name": "India" }
-      ],
-      "description": "High-performance digital platforms engineered for conversion. We build robust, scalable architectures that load instantly."
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Ecommerce Development",
-      "provider": { "@id": "https://warsi-webworks.vercel.app" },
-      "areaServed": [
-        { "@type": "City", "name": "Moradabad" },
-        { "@type": "State", "name": "Uttar Pradesh" },
-        { "@type": "Country", "name": "India" }
-      ],
-      "description": "Immersive shopping experiences. From custom storefronts to complex inventory systems."
-    },
-    {
-      "@type": "Service",
-      "serviceType": "Mobile App Development",
-      "provider": { "@id": "https://warsi-webworks.vercel.app" },
-      "areaServed": [
-        { "@type": "City", "name": "Moradabad" },
-        { "@type": "State", "name": "Uttar Pradesh" },
-        { "@type": "Country", "name": "India" }
-      ],
-      "description": "Native-feeling cross-platform applications built with React Native."
-    },
-    {
-      "@type": "Service",
-      "serviceType": "SEO Services",
-      "provider": { "@id": "https://warsi-webworks.vercel.app" },
-      "areaServed": [
-        { "@type": "City", "name": "Moradabad" },
-        { "@type": "State", "name": "Uttar Pradesh" },
-        { "@type": "Country", "name": "India" }
-      ],
-      "description": "Data-driven growth through technical excellence and semantic architecture."
     }
   ]
 };

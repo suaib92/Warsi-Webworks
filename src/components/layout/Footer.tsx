@@ -19,7 +19,7 @@ export default function Footer() {
               Premium agency building websites, apps, and digital experiences that grow businesses and establish trust.
             </p>
             <div className="flex items-center gap-4" suppressHydrationWarning>
-              <Link href="https://warsi-webworks.vercel.app" aria-label="Visit Warsi WebWorks Official Website" className="w-10 h-10 rounded-full bg-card border border-border-subtle flex items-center justify-center text-text-body hover:text-accent-light hover:border-accent-light transition-colors">
+              <Link href="https://warsiwebworks.com" aria-label="Visit Warsi WebWorks Official Website" className="w-10 h-10 rounded-full bg-card border border-border-subtle flex items-center justify-center text-text-body hover:text-accent-light hover:border-accent-light transition-colors">
                 <Globe size={18} aria-hidden="true" />
               </Link>
               <Link href="https://share.google/6P3GYqa1EtX0ml1Sf" target="_blank" rel="noopener noreferrer" aria-label="View our Google Business Profile" className="w-10 h-10 rounded-full bg-card border border-border-subtle flex items-center justify-center text-text-body hover:text-accent-light hover:border-accent-light transition-colors">
@@ -128,6 +128,16 @@ export default function Footer() {
             <p className="font-bold text-sm text-text-primary mb-2">Premium Website Development & Digital Services in UP</p>
             <p>
               Partner with the leading <strong>Website Developer</strong> and <strong>Web Design Company</strong>. Specializing in high-performance <strong>Ecommerce Website Development</strong>, <strong>React</strong>, <strong>Next.js</strong>, and custom <strong>Mobile App Development</strong>. We proudly serve businesses in <Link href="/" className="font-bold hover:text-accent transition-colors">Moradabad</Link>, <Link href="/locations/rampur" className="font-bold hover:text-accent transition-colors">Rampur</Link>, <Link href="/locations/sambhal" className="font-bold hover:text-accent transition-colors">Sambhal</Link>, <Link href="/locations/amroha" className="font-bold hover:text-accent transition-colors">Amroha</Link>, <Link href="/locations/bijnor" className="font-bold hover:text-accent transition-colors">Bijnor</Link>, <Link href="/locations/kashipur" className="font-bold hover:text-accent transition-colors">Kashipur</Link>, <Link href="/locations/rudrapur" className="font-bold hover:text-accent transition-colors">Rudrapur</Link>, <Link href="/locations/bareilly" className="font-bold hover:text-accent transition-colors">Bareilly</Link>, <Link href="/locations/haldwani" className="font-bold hover:text-accent transition-colors">Haldwani</Link>, <Link href="/locations/gajraula" className="font-bold hover:text-accent transition-colors">Gajraula</Link>, <Link href="/locations/chandausi" className="font-bold hover:text-accent transition-colors">Chandausi</Link>, <Link href="/locations/bilari" className="font-bold hover:text-accent transition-colors">Bilari</Link>, <Link href="/locations/thakurdwara" className="font-bold hover:text-accent transition-colors">Thakurdwara</Link>, <Link href="/locations/joya" className="font-bold hover:text-accent transition-colors">Joya</Link>, and <Link href="/locations/hasanpur" className="font-bold hover:text-accent transition-colors">Hasanpur</Link>.
+            </p>
+          </div>
+        </div>
+
+        {/* Industry SEO Targets */}
+        <div className="border-t border-border-section pt-8 mb-8" suppressHydrationWarning>
+          <div className="text-xs text-text-body leading-relaxed max-w-4xl">
+            <p className="font-bold text-sm text-text-primary mb-2">Industries We Empower</p>
+            <p>
+              We engineer specialized B2B and B2C digital platforms for various sectors. Explore our industry-specific solutions for: <Link href="/website-development-for-manufacturers" className="font-bold hover:text-accent transition-colors">Manufacturers</Link>, <Link href="/website-development-for-doctors" className="font-bold hover:text-accent transition-colors">Doctors & Healthcare</Link>, <Link href="/website-development-for-schools" className="font-bold hover:text-accent transition-colors">Schools & Education</Link>, <Link href="/website-development-for-brass-industry" className="font-bold hover:text-accent transition-colors">Brass Export Industry</Link>, <Link href="/website-development-for-real-estate" className="font-bold hover:text-accent transition-colors">Real Estate & Construction</Link>, and <Link href="/website-development-for-startups" className="font-bold hover:text-accent transition-colors">Tech Startups</Link>. We also offer dedicated <Link href="/ecommerce-for-manufacturers" className="font-bold hover:text-accent transition-colors">Ecommerce integration</Link> and programmatic <Link href="/seo-services-for-manufacturers" className="font-bold hover:text-accent transition-colors">SEO scale</Link> for every sector.
             </p>
           </div>
         </div>

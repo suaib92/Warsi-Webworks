@@ -1,4 +1,26 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://warsi-webworks.vercel.app/sitemap.xml
+# AEO - Explicitly allow AI and Answer Engine Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Omgili
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+Sitemap: https://warsiwebworks.com/sitemap.xml

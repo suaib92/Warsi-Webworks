@@ -1,0 +1,357 @@
+[
+    {
+        "key": "group_case_study_details",
+        "title": "Case Study Details",
+        "fields": [
+            {
+                "key": "field_tab_hero",
+                "label": "Hero Section",
+                "name": "",
+                "type": "tab",
+                "placement": "top"
+            },
+            {
+                "key": "field_hero_badge",
+                "label": "Case Study Badge",
+                "name": "hero_badge",
+                "type": "text"
+            },
+            {
+                "key": "field_hero_title",
+                "label": "Hero Title",
+                "name": "hero_title",
+                "type": "text",
+                "instructions": "Leave blank to use the main post title."
+            },
+            {
+                "key": "field_hero_description",
+                "label": "Hero Description",
+                "name": "hero_description",
+                "type": "textarea"
+            },
+            {
+                "key": "field_stat_1_number",
+                "label": "Stat 1 Number",
+                "name": "stat_1_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_stat_1_label",
+                "label": "Stat 1 Label",
+                "name": "stat_1_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_stat_2_number",
+                "label": "Stat 2 Number",
+                "name": "stat_2_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_stat_2_label",
+                "label": "Stat 2 Label",
+                "name": "stat_2_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_stat_3_number",
+                "label": "Stat 3 Number",
+                "name": "stat_3_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_stat_3_label",
+                "label": "Stat 3 Label",
+                "name": "stat_3_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_stat_4_number",
+                "label": "Stat 4 Number",
+                "name": "stat_4_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_stat_4_label",
+                "label": "Stat 4 Label",
+                "name": "stat_4_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_primary_cta_text",
+                "label": "Primary CTA Text",
+                "name": "primary_cta_text",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_primary_cta_link",
+                "label": "Primary CTA Link",
+                "name": "primary_cta_link",
+                "type": "url",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_secondary_cta_text",
+                "label": "Secondary CTA Text",
+                "name": "secondary_cta_text",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_secondary_cta_link",
+                "label": "Secondary CTA Link",
+                "name": "secondary_cta_link",
+                "type": "url",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_tab_overview",
+                "label": "Candidate Overview",
+                "name": "",
+                "type": "tab",
+                "placement": "top"
+            },
+            {
+                "key": "field_candidate_image",
+                "label": "Candidate Image",
+                "name": "candidate_image",
+                "type": "image",
+                "return_format": "array"
+            },
+            {
+                "key": "field_candidate_position",
+                "label": "Candidate Position",
+                "name": "candidate_position",
+                "type": "text"
+            },
+            {
+                "key": "field_candidate_description",
+                "label": "Candidate Description",
+                "name": "candidate_description",
+                "type": "textarea"
+            },
+            {
+                "key": "field_specialty",
+                "label": "Specialty",
+                "name": "specialty",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_target_country",
+                "label": "Target Country",
+                "name": "target_country",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_license_applied",
+                "label": "License Applied",
+                "name": "license_applied",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_experience",
+                "label": "Experience",
+                "name": "experience",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_tab_challenges",
+                "label": "Challenges & Solutions",
+                "name": "",
+                "type": "tab"
+            },
+            {
+                "key": "field_challenges",
+                "label": "Challenges",
+                "name": "challenges",
+                "type": "repeater",
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "field_challenge_title",
+                        "label": "Challenge Title",
+                        "name": "challenge_title",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "key": "field_solutions",
+                "label": "Solutions",
+                "name": "solutions",
+                "type": "repeater",
+                "layout": "table",
+                "sub_fields": [
+                    {
+                        "key": "field_solution_title",
+                        "label": "Solution Title",
+                        "name": "solution_title",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "key": "field_tab_results",
+                "label": "Results & Outcomes",
+                "name": "",
+                "type": "tab"
+            },
+            {
+                "key": "field_result_1_number",
+                "label": "Result 1 Number",
+                "name": "result_1_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_result_1_label",
+                "label": "Result 1 Label",
+                "name": "result_1_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_result_2_number",
+                "label": "Result 2 Number",
+                "name": "result_2_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_result_2_label",
+                "label": "Result 2 Label",
+                "name": "result_2_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_result_3_number",
+                "label": "Result 3 Number",
+                "name": "result_3_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_result_3_label",
+                "label": "Result 3 Label",
+                "name": "result_3_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_result_4_number",
+                "label": "Result 4 Number",
+                "name": "result_4_number",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_result_4_label",
+                "label": "Result 4 Label",
+                "name": "result_4_label",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_tab_testimonial",
+                "label": "Testimonial",
+                "name": "",
+                "type": "tab"
+            },
+            {
+                "key": "field_testimonial_title",
+                "label": "Testimonial Title",
+                "name": "testimonial_title",
+                "type": "text"
+            },
+            {
+                "key": "field_testimonial_description",
+                "label": "Testimonial Description",
+                "name": "testimonial_description",
+                "type": "textarea"
+            },
+            {
+                "key": "field_testimonial_quote",
+                "label": "Testimonial Quote",
+                "name": "testimonial_quote",
+                "type": "textarea"
+            },
+            {
+                "key": "field_doctor_name",
+                "label": "Doctor Name",
+                "name": "doctor_name",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_doctor_credentials",
+                "label": "Doctor Credentials",
+                "name": "doctor_credentials",
+                "type": "text",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_tab_final_cta",
+                "label": "Final CTA",
+                "name": "",
+                "type": "tab"
+            },
+            {
+                "key": "field_cta_heading",
+                "label": "CTA Heading",
+                "name": "cta_heading",
+                "type": "text"
+            },
+            {
+                "key": "field_cta_description",
+                "label": "CTA Description",
+                "name": "cta_description",
+                "type": "textarea"
+            },
+            {
+                "key": "field_cta_primary_button",
+                "label": "Primary Button",
+                "name": "cta_primary_button",
+                "type": "link",
+                "wrapper": { "width": "50" }
+            },
+            {
+                "key": "field_cta_secondary_button",
+                "label": "Secondary Button",
+                "name": "cta_secondary_button",
+                "type": "link",
+                "wrapper": { "width": "50" }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "case_study"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

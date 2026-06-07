@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Blog & Insights | Warsi WebWorks",
   description: "Read the latest insights on website development, ecommerce, React, Next.js, and SEO strategies for businesses in Moradabad and worldwide.",
   alternates: {
-    canonical: "https://warsi-webworks.vercel.app/blog",
+    canonical: "https://warsiwebworks.com/blog",
   },
 };
 
@@ -27,7 +27,7 @@ export default async function BlogHub(
     "@type": "Blog",
     "name": "Warsi WebWorks Blog",
     "description": "Insights on Web Development, SEO, and Digital Strategy.",
-    "url": "https://warsi-webworks.vercel.app/blog",
+    "url": "https://warsiwebworks.com/blog",
     "publisher": {
       "@type": "Organization",
       "name": "Warsi WebWorks"
@@ -43,7 +43,7 @@ export default async function BlogHub(
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12">
           <p className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4">Insights & Strategy</p>
           <h1 className="text-5xl md:text-7xl font-bold text-text-primary tracking-tighter mb-6 leading-tight">
             Our latest thinking on digital engineering.
@@ -51,6 +51,34 @@ export default async function BlogHub(
           <p className="text-xl text-text-body leading-relaxed">
             Expert articles on Next.js, React, SEO, and growing your business through high-performance web applications.
           </p>
+        </div>
+
+        {/* Category Silos */}
+        <div className="flex flex-wrap gap-3 mb-12 border-b border-border-subtle pb-6">
+          <Link
+            href="/blog"
+            className="px-5 py-2 rounded-full text-sm font-bold bg-accent text-white transition-colors"
+          >
+            All Insights
+          </Link>
+          <Link
+            href="/blog/category/engineering"
+            className="px-5 py-2 rounded-full text-sm font-bold bg-card border border-border-subtle text-text-primary hover:bg-accent/10 hover:border-accent/30 hover:text-accent transition-colors"
+          >
+            Engineering
+          </Link>
+          <Link
+            href="/blog/category/business"
+            className="px-5 py-2 rounded-full text-sm font-bold bg-card border border-border-subtle text-text-primary hover:bg-accent/10 hover:border-accent/30 hover:text-accent transition-colors"
+          >
+            Business
+          </Link>
+          <Link
+            href="/blog/category/marketing"
+            className="px-5 py-2 rounded-full text-sm font-bold bg-card border border-border-subtle text-text-primary hover:bg-accent/10 hover:border-accent/30 hover:text-accent transition-colors"
+          >
+            Marketing
+          </Link>
         </div>
 
         {/* Blog Grid */}

@@ -1,7 +1,8 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
+import { blogPosts } from '@/data/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://warsi-webworks.vercel.app'
+  const base = 'https://warsiwebworks.com'
   const cities = [
     "rampur", "sambhal", "amroha", "bijnor", "kashipur", 
     "rudrapur", "bareilly", "haldwani", "gajraula", "chandausi", 
@@ -108,6 +109,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     ...locationUrls,
+    ...[
+      "manufacturers", "doctors", "schools", "brass-industry", "real-estate", "startups"
+    ].flatMap(industry => [
+      {
+        url: `${base}/website-development-for-${industry}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+      },
+      {
+        url: `${base}/ecommerce-for-${industry}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+      },
+      {
+        url: `${base}/seo-services-for-${industry}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.8,
+      }
+    ]),
+    {
+      url: `${base}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    ...Array.from(new Set(blogPosts.map(post => post.category.toLowerCase()))).map(category => ({
+      url: `${base}/blog/category/${category}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...blogPosts.map(post => ({
+      url: `${base}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
     {
       url: `${base}/privacy-policy`,
       lastModified: new Date(),

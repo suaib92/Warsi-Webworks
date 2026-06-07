@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import InternalLinks from '@/components/seo/InternalLinks';
 import { 
   Calculator, 
   Banknote, 
@@ -100,6 +102,10 @@ export default function ToolsHubPage() {
   return (
     <main className="min-h-screen pt-32 pb-20 bg-base">
       <div className="container mx-auto px-4 md:px-6">
+        <Breadcrumbs items={[
+          { name: "Home", url: "/" },
+          { name: "Tools", url: "/tools" }
+        ]} />
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -153,6 +159,8 @@ export default function ToolsHubPage() {
             Start Your Project
           </Link>
         </div>
+
+        <InternalLinks category="tool" />
 
       </div>
     </main>

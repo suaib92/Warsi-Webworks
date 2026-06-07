@@ -1,0 +1,481 @@
+/* 
+ * Case Study Template Styles
+ * Typography: Inter
+ * Colors: Primary #0B2D5B, Secondary #1E4D8C, Background #F6F8FC, Text #1F2937 
+ */
+
+:root {
+    --cs-primary: #0B2D5B;
+    --cs-secondary: #1E4D8C;
+    --cs-bg: #F6F8FC;
+    --cs-white: #FFFFFF;
+    --cs-success: #22C55E;
+    --cs-danger: #EF4444;
+    --cs-text: #1F2937;
+    --cs-text-light: #6B7280;
+    
+    --cs-font: 'Inter', sans-serif;
+    
+    --cs-radius-sm: 8px;
+    --cs-radius-md: 12px;
+    --cs-radius-lg: 24px;
+    
+    --cs-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --cs-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --cs-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Base Styles */
+.case-study-main {
+    font-family: var(--cs-font);
+    color: var(--cs-text);
+    background-color: var(--cs-white);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.case-study-main * {
+    box-sizing: border-box;
+}
+
+.cs-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.cs-section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--cs-bg);
+}
+
+/* Typography */
+.cs-heading-hero {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--cs-primary);
+    letter-spacing: -1px;
+}
+
+.cs-heading-section {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    color: var(--cs-primary);
+}
+
+.cs-heading-card {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--cs-primary);
+}
+
+.cs-text-body {
+    font-size: 16px;
+    color: var(--cs-text-light);
+    margin-bottom: 24px;
+}
+
+.cs-text-small {
+    font-size: 14px;
+    color: var(--cs-text-light);
+    margin-bottom: 16px;
+}
+
+.cs-eyebrow {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cs-secondary);
+    margin-bottom: 16px;
+}
+
+.text-center { text-align: center; }
+.text-white { color: var(--cs-white) !important; }
+.text-white-70 { color: rgba(255, 255, 255, 0.7); }
+
+/* Buttons */
+.cs-hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+.justify-center { justify-content: center; }
+
+.cs-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--cs-radius-sm);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cs-btn-primary {
+    background-color: var(--cs-primary);
+    color: var(--cs-white);
+}
+.cs-btn-primary:hover {
+    background-color: var(--cs-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--cs-shadow-md);
+}
+
+.cs-btn-secondary {
+    background-color: var(--cs-bg);
+    color: var(--cs-primary);
+    border: 1px solid rgba(11, 45, 91, 0.1);
+}
+.cs-btn-secondary:hover {
+    background-color: #E2E8F0;
+}
+
+.cs-btn-outline-white {
+    background-color: transparent;
+    color: var(--cs-white);
+    border: 2px solid var(--cs-white);
+}
+.cs-btn-outline-white:hover {
+    background-color: var(--cs-white);
+    color: var(--cs-primary);
+}
+.cs-btn-large {
+    padding: 16px 40px;
+    font-size: 18px;
+}
+
+
+/* Layout Grids */
+/* Hero Section */
+.cs-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.cs-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 32px;
+    border-radius: var(--cs-radius-md);
+    box-shadow: var(--cs-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--cs-shadow-md);
+}
+
+.cs-stat-num {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--cs-primary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+.cs-stat-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cs-text-light);
+}
+
+/* Candidate Overview */
+.cs-overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+.cs-rounded-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--cs-radius-lg);
+    box-shadow: var(--cs-shadow-lg);
+    object-fit: cover;
+}
+.cs-info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+}
+.cs-info-card {
+    background: var(--cs-white);
+    padding: 24px;
+    border-radius: var(--cs-radius-md);
+    box-shadow: var(--cs-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.cs-info-card strong {
+    color: var(--cs-text-light);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.cs-info-card span {
+    color: var(--cs-primary);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Challenges & Solutions */
+.cs-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+.cs-col {
+    background: var(--cs-bg);
+    padding: 40px;
+    border-radius: var(--cs-radius-lg);
+    height: 100%;
+}
+.cs-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.cs-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 1.4;
+    background: var(--cs-white);
+    padding: 20px;
+    border-radius: var(--cs-radius-sm);
+    box-shadow: var(--cs-shadow-sm);
+}
+.cs-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.cs-icon-danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--cs-danger);
+}
+.cs-icon-success {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--cs-success);
+}
+
+/* Results */
+.cs-results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+}
+.cs-result-card {
+    background: var(--cs-white);
+    padding: 40px 24px;
+    border-radius: var(--cs-radius-md);
+    text-align: center;
+    box-shadow: var(--cs-shadow-sm);
+    transition: all 0.3s ease;
+}
+.cs-result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--cs-shadow-md);
+}
+.cs-result-num {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--cs-primary);
+    margin-bottom: 12px;
+}
+.cs-result-label {
+    font-size: 16px;
+    color: var(--cs-text-light);
+    font-weight: 500;
+}
+
+/* Testimonial */
+.cs-testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+.premium-card {
+    background: var(--cs-primary);
+    color: var(--cs-white);
+    padding: 64px 48px;
+    border-radius: var(--cs-radius-lg);
+    box-shadow: var(--cs-shadow-lg);
+    position: relative;
+}
+.cs-quote-mark {
+    position: absolute;
+    top: 24px;
+    left: 48px;
+    font-size: 120px;
+    line-height: 1;
+    font-family: serif;
+    color: rgba(255, 255, 255, 0.1);
+}
+.cs-quote-text {
+    font-size: 24px;
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+.cs-quote-author {
+    display: flex;
+    flex-direction: column;
+}
+.cs-quote-author strong {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+.cs-quote-author span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
+/* Related */
+.cs-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+.cs-related-card {
+    background: var(--cs-white);
+    border-radius: var(--cs-radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: var(--cs-shadow-sm);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.cs-related-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--cs-shadow-lg);
+}
+.cs-related-img {
+    height: 240px;
+    overflow: hidden;
+}
+.cs-related-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.cs-placeholder-img {
+    width: 100%;
+    height: 100%;
+    background: var(--cs-secondary);
+}
+.cs-related-card:hover .cs-related-img img {
+    transform: scale(1.05);
+}
+.cs-related-content {
+    padding: 32px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.cs-read-more {
+    margin-top: auto;
+    color: var(--cs-secondary);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+.cs-related-card:hover .cs-read-more {
+    gap: 12px;
+}
+
+/* Final CTA */
+.cs-final-cta {
+    background-color: var(--cs-primary);
+    padding: 120px 0;
+}
+
+/* Responsive Media Queries */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .cs-heading-hero { font-size: 48px; }
+    .cs-hero-grid, .cs-overview-grid, .cs-testimonial-grid { gap: 32px; }
+    .cs-results-grid { grid-template-columns: repeat(2, 1fr); }
+    .cs-related-grid { grid-template-columns: repeat(2, 1fr); }
+    .cs-related-card:last-child { display: none; } /* Hide 3rd on tablet */
+}
+
+@media (max-width: 768px) {
+    .cs-heading-hero { font-size: 40px; }
+    .cs-heading-section { font-size: 32px; }
+    
+    .cs-hero-grid { grid-template-columns: 1fr; }
+    .cs-hero-content { text-align: center; }
+    .cs-hero-actions { justify-content: center; }
+    
+    .cs-overview-grid { grid-template-columns: 1fr; }
+    .cs-overview-image { order: -1; }
+    
+    .cs-two-col { grid-template-columns: 1fr; }
+    
+    .cs-testimonial-grid { grid-template-columns: 1fr; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .cs-heading-hero { font-size: 32px; }
+    .cs-heading-section { font-size: 28px; }
+    .cs-section { padding: 48px 0; }
+    
+    .cs-stats-grid { grid-template-columns: 1fr; }
+    .cs-info-cards { grid-template-columns: 1fr; }
+    .cs-results-grid { grid-template-columns: 1fr; }
+    .cs-related-grid { grid-template-columns: 1fr; }
+    .cs-related-card:last-child { display: flex; } /* Show all on mobile */
+    
+    .premium-card { padding: 40px 24px; }
+    .cs-final-cta { padding: 80px 0; }
+}

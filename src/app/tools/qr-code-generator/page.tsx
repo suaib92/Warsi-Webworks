@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import QrCodeGenerator from '@/components/tools/QRCodeGenerator';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free QR Code Generator | Create Custom QR Codes',
   description: 'Generate high-quality, non-expiring QR codes for URLs, emails, phone numbers, and WhatsApp. Download in PNG or SVG formats instantly for free.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/qr-code-generator',
+    canonical: 'https://warsiwebworks.com/tools/qr-code-generator',
   }
 };
 
@@ -95,6 +97,9 @@ export default function QrCodeGeneratorPage() {
         <QrCodeGenerator />
       </ToolLayout>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "qr code generator", url: "/tools/qr-code-generator" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RelatedTools currentTool="qr-code" relatedToolIds={['business-name', 'website-cost', 'invoice']} />
       </div>
@@ -161,6 +166,9 @@ export default function QrCodeGeneratorPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="qr-code-generator" />
+      </div>
     </>
   );
 }

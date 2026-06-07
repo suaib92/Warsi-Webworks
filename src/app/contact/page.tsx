@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Contact Warsi WebWorks | Web Development Agency in Moradabad",
   description: "Get in touch with Warsi WebWorks in Moradabad, UP. Request a quote for website design, Ecommerce, or mobile app development.",
   alternates: {
-    canonical: "https://warsi-webworks.vercel.app/contact",
+    canonical: "https://warsiwebworks.com/contact",
   },
 };
 
@@ -17,15 +17,15 @@ export default function ContactPage() {
       "@type": "ContactPage",
       "name": "Contact Warsi WebWorks | Web Development Agency in Moradabad",
       "description": "Get in touch with Warsi WebWorks in Moradabad, UP. Request a quote for website design, Ecommerce, or mobile app development.",
-      "url": "https://warsi-webworks.vercel.app/contact"
+      "url": "https://warsiwebworks.com/contact"
     },
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Warsi WebWorks",
-      "image": "https://warsi-webworks.vercel.app/og-image.png",
-      "@id": "https://warsi-webworks.vercel.app",
-      "url": "https://warsi-webworks.vercel.app",
+      "image": "https://warsiwebworks.com/og-image.png",
+      "@id": "https://warsiwebworks.com",
+      "url": "https://warsiwebworks.com",
       "telephone": "+917078719621",
       "email": "hello@warsiwebworks.com",
       "address": {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Code2, Search, Smartphone, ShoppingCart } from "lucide-react";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 
 // Target cities within 100km of Moradabad
 const cities = [
@@ -28,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     title: `Website Development Company in ${cityName} | Warsi WebWorks`,
     description: `Looking for a premium web design agency in ${cityName}? Warsi WebWorks delivers blazing-fast React and ecommerce solutions for ${cityName} businesses.`,
     alternates: {
-      canonical: `https://warsi-webworks.vercel.app/locations/${city}`,
+      canonical: `https://warsiwebworks.com/locations/${city}`,
     },
   };
 }
@@ -42,9 +44,9 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": `Warsi WebWorks - ${cityName} Web Design`,
-      "image": "https://warsi-webworks.vercel.app/og-image.png",
-      "@id": `https://warsi-webworks.vercel.app/locations/${city}`,
-      "url": `https://warsi-webworks.vercel.app/locations/${city}`,
+      "image": "https://warsiwebworks.com/og-image.png",
+      "@id": `https://warsiwebworks.com/locations/${city}`,
+      "url": `https://warsiwebworks.com/locations/${city}`,
       "telephone": "+917078719621",
       "address": {
         "@type": "PostalAddress",
@@ -84,6 +86,11 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       
       {/* Hero Section */}
       <section className="container mx-auto px-6 md:px-12 max-w-6xl mb-24">
+        <Breadcrumbs items={[
+          { name: "Home", url: "/" },
+          { name: "Locations", url: "/" },
+          { name: cityName, url: `/locations/${city}` }
+        ]} />
         <div className="flex items-center gap-2 text-accent mb-6">
           <MapPin className="w-5 h-5" />
           <span className="font-semibold uppercase tracking-wider text-sm">Serving {cityName} & Surrounding Areas</span>
@@ -189,6 +196,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <Link href="/about" className="inline-block text-accent font-semibold hover:underline text-lg">
           Meet our engineering team &rarr;
         </Link>
+        <InternalLinks category="service" currentSlug={city} />
       </section>
     </main>
   );

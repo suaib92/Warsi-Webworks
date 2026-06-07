@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import InternalLinks from "@/components/seo/InternalLinks";
 import ToolLayout from '@/components/tools/ToolLayout';
 import ResumeBuilder from '@/components/tools/ResumeBuilder';
 import RelatedTools from '@/components/tools/RelatedTools';
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Free AI Resume Builder | Create ATS-Friendly Resumes',
   description: 'Build a professional, ATS-friendly resume in minutes. Use AI assistance to write your summary and download as a PDF for free.',
   alternates: {
-    canonical: 'https://warsi-webworks.vercel.app/tools/resume-builder',
+    canonical: 'https://warsiwebworks.com/tools/resume-builder',
   }
 };
 
@@ -71,6 +73,9 @@ export default function ResumeBuilderPage() {
         <ResumeBuilder />
       </div>
 
+      <div className="container mx-auto px-4 md:px-6 mb-8">
+        <Breadcrumbs items={[{ name: "Home", url: "/" }, { name: "Tools", url: "/tools" }, { name: "resume builder", url: "/tools/resume-builder" }]} />
+      </div>
       <div className="container mx-auto px-4 md:px-6 max-w-5xl print:hidden">
         <RelatedTools currentTool="resume" relatedToolIds={['cover-letter', 'salary', 'word-counter', 'business-name']} />
       </div>
@@ -127,6 +132,9 @@ export default function ResumeBuilderPage() {
           </div>
         </div>
       </section>
+      <div className="container mx-auto px-4 md:px-6 pb-20">
+        <InternalLinks category="tool" currentSlug="resume-builder" />
+      </div>
     </>
   );
 }

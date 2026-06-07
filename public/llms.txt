@@ -30,6 +30,6 @@ Warsi WebWorks is a premium digital engineering studio and web development agenc
 - **Founder**: Suaib Warsi
 - **Location**: Moradabad, Uttar Pradesh, India
 - **Postal Code**: 244001
-- **Official Site**: https://warsi-webworks.vercel.app
+- **Official Site**: https://warsiwebworks.com
 - **Contact Email**: suaib8211@gmail.com
 - **Contact Phone**: +917078719621
