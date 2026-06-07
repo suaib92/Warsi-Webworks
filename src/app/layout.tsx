@@ -78,7 +78,7 @@ const jsonLd = {
       "founder": {
         "@type": "Person",
         "name": "Suaib Warsi",
-        "url": "https://www.linkedin.com/in/suaibwarsi/",
+        "url": "https://www.linkedin.com/in/mohd-suaib-warsi/",
         "jobTitle": "Lead Engineer"
       },
       "contactPoint": {
@@ -113,7 +113,7 @@ const jsonLd = {
       ],
       "sameAs": [
         "https://warsiwebworks.com",
-        "https://github.com/suaibwarsi",
+        "https://github.com/suaib92",
         "https://linkedin.com/company/warsiwebworks",
         "https://twitter.com/warsiwebworks"
       ]

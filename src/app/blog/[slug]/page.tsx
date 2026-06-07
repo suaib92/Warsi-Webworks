@@ -48,7 +48,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "author": {
       "@type": "Person",
       "name": post.author.name,
-      "url": "https://www.linkedin.com/in/suaibwarsi/",
+      "url": "https://www.linkedin.com/in/mohd-suaib-warsi/",
       "jobTitle": post.author.role
     },
     "publisher": {
@@ -168,9 +168,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <p className="text-text-body leading-relaxed mb-4">
                     With over 15 years of experience engineering high-performance web applications, {post.author.name} specializes in advanced Next.js architectures, Headless Commerce, and Technical SEO. He has architected scalable digital solutions for D2C brands, B2B manufacturers, and healthcare enterprises globally.
                   </p>
-                  <a href="https://www.linkedin.com/in/suaibwarsi/" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:text-accent-light transition-colors inline-flex items-center">
+                <p className="mt-3 text-text-body">
+                  <a href="https://www.linkedin.com/in/mohd-suaib-warsi/" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:text-accent-light transition-colors inline-flex items-center">
                     Connect on LinkedIn <span className="ml-2">→</span>
                   </a>
+                </p>
                 </div>
               </div>
             </div>

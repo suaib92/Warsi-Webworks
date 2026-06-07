@@ -25,7 +25,7 @@ export default function About() {
       "url": "https://warsiwebworks.com",
       "logo": "https://warsiwebworks.com/og-image.png",
       "sameAs": [
-        "https://github.com/suaibwarsi",
+        "https://github.com/suaib92",
         "https://linkedin.com/company/warsiwebworks"
       ],
       "founder": {
@@ -33,7 +33,7 @@ export default function About() {
         "name": "Suaib Warsi",
         "jobTitle": "Founder & Lead Developer",
         "sameAs": [
-          "https://github.com/suaibwarsi"
+          "https://github.com/suaib92"
         ]
       }
     }
