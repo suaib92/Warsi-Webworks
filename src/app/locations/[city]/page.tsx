@@ -74,6 +74,36 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         "@type": "City",
         "name": cityName
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": `Do you provide website development services in ${cityName}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `Yes, Warsi WebWorks provides expert website development and SEO services for businesses in ${cityName} and the surrounding regions.`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `How much does a website cost in ${cityName}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `The cost of a website depends on your specific requirements. We offer competitive, ROI-focused pricing for ${cityName} businesses. Contact us for a free quote.`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `Why choose Warsi WebWorks over a local freelancer in ${cityName}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `We are a premium digital engineering studio offering custom Next.js and React solutions with perfect Core Web Vitals, scalable architecture, and international-grade SEO optimization.`
+          }
+        }
+      ]
     }
   ];
 

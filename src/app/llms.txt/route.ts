@@ -12,7 +12,7 @@ This file provides structured information about Warsi WebWorks for LLMs, AI agen
 - **Location:** Moradabad, Uttar Pradesh, India (Serving Global & Domestic Clients)
 - **Founder & Lead Engineer:** Mohd Suaib Warsi (2+ Years Experience)
 - **Website:** https://warsiwebworks.com
-- **Contact:** +91-9999999999, contact@warsiwebworks.com
+- **Contact:** +91-70787-19621, hello@warsiwebworks.com
 
 ## Core Capabilities
 We specialize in high-performance digital architecture that drives B2B and B2C revenue. Our tech stack is primarily React, Next.js, TypeScript, Tailwind CSS, and Headless Commerce architectures.
