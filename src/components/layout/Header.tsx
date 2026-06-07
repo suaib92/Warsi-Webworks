@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -43,11 +44,14 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 z-50">
-          <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-            <span className="text-white font-bold text-xl leading-none">W</span>
+        <Link href="/" className="flex items-center gap-2.5 z-50 group">
+          <div className="relative w-10 h-10 overflow-hidden flex-shrink-0">
+            <Image src="/icon.png" alt="Warsi WebWorks Logo" fill className="object-contain" priority />
           </div>
-          <span className="font-bold text-xl tracking-tight text-text-primary">Warsi WebWorks</span>
+          <div className="flex flex-col justify-center leading-[1.1] text-text-primary">
+            <span className="font-black text-[18px] tracking-tight">Warsi</span>
+            <span className="font-medium text-[18px] tracking-tight text-text-body">WebWorks</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

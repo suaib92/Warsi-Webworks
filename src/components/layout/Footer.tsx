@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { Globe, MessageCircle, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -9,11 +10,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12" suppressHydrationWarning>
           {/* Brand */}
           <div suppressHydrationWarning>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-white font-bold text-xl leading-none">W</span>
+            <Link href="/" className="flex items-center gap-2.5 mb-4 group">
+              <div className="relative w-10 h-10 overflow-hidden flex-shrink-0">
+                <Image src="/icon.png" alt="Warsi WebWorks Logo" fill className="object-contain" />
               </div>
-              <span className="font-bold text-xl tracking-tight text-text-primary">Warsi WebWorks</span>
+              <div className="flex flex-col justify-center leading-[1.1] text-text-primary">
+                <span className="font-black text-[18px] tracking-tight">Warsi</span>
+                <span className="font-medium text-[18px] tracking-tight text-text-body">WebWorks</span>
+              </div>
             </Link>
             <p className="text-text-body mb-6">
               Premium agency building websites, apps, and digital experiences that grow businesses and establish trust.
