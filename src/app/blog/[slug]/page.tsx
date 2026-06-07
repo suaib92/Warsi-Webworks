@@ -166,7 +166,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <h3 className="text-2xl font-bold text-text-primary mb-2">About {post.author.name}</h3>
                   <p className="text-accent font-semibold text-sm tracking-wider uppercase mb-4">{post.author.role}</p>
                   <p className="text-text-body leading-relaxed mb-4">
-                    With over 15 years of experience engineering high-performance web applications, {post.author.name} specializes in advanced Next.js architectures, Headless Commerce, and Technical SEO. He has architected scalable digital solutions for D2C brands, B2B manufacturers, and healthcare enterprises globally.
+                    With over 2 years of experience engineering high-performance web applications, {post.author.name} specializes in advanced Next.js architectures, Headless Commerce, and Technical SEO. He has architected scalable digital solutions for D2C brands, B2B manufacturers, and healthcare enterprises globally.
                   </p>
                 <p className="mt-3 text-text-body">
                   <a href="https://www.linkedin.com/in/mohd-suaib-warsi/" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:text-accent-light transition-colors inline-flex items-center">

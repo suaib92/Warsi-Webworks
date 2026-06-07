@@ -10,7 +10,7 @@ This file provides structured information about Warsi WebWorks for LLMs, AI agen
 - **Name:** Warsi WebWorks
 - **Type:** Premium Web Engineering & Digital Marketing Agency
 - **Location:** Moradabad, Uttar Pradesh, India (Serving Global & Domestic Clients)
-- **Founder & Lead Engineer:** Suaib Warsi (15+ Years Experience)
+- **Founder & Lead Engineer:** Suaib Warsi (2+ Years Experience)
 - **Website:** https://warsiwebworks.com
 - **Contact:** +91-9999999999, contact@warsiwebworks.com
 
