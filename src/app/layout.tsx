@@ -22,10 +22,6 @@ export const metadata: Metadata = {
   description: "Warsi WebWorks is a premium digital engineering studio. We build world-class websites, ecommerce stores, and mobile apps for modern brands in Moradabad.",
   keywords: ["Website Development Company Moradabad", "Web Designer Moradabad", "Mobile App Development Moradabad", "SEO Services Moradabad", "Ecommerce Development Moradabad", "MERN Stack Development", "React Development"],
   manifest: "/manifest.json",
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
   openGraph: {
     title: "Warsi WebWorks | Premium Digital Engineering Studio",
     description: "Building Digital Experiences That Grow Businesses. Expert Website & Mobile App Development in Moradabad.",
