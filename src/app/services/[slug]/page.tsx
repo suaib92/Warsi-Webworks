@@ -271,7 +271,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
             Start Your Project in {s.cityName}
           </Link>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
