@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Warsi WebWorks | Premium Tech Agency in Moradabad",
@@ -79,8 +80,8 @@ export default function About() {
         <div className="bg-card border border-border-subtle rounded-[12px] p-8 md:p-12 mb-24">
           <h2 className="text-3xl md:text-5xl font-bold text-text-primary tracking-tighter mb-12">Meet the Core Development Team</h2>
           <div className="flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-              <span className="text-4xl md:text-5xl font-bold text-accent">SW</span>
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-accent/10 flex items-center justify-center shrink-0 overflow-hidden relative shadow-lg shadow-accent/10 border-4 border-card">
+              <Image src="/images/suaib.jpeg" alt="Suaib Warsi" fill className="object-cover object-top" />
             </div>
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-2">Suaib Warsi</h3>
