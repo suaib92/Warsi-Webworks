@@ -11,8 +11,8 @@ export default function Footer() {
           {/* Brand */}
           <div suppressHydrationWarning>
             <Link href="/" className="flex items-center mb-6 group">
-              <div className="relative w-64 h-16 overflow-hidden flex-shrink-0">
-                <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain object-left" />
+              <div className="relative w-64 h-16 overflow-visible flex-shrink-0">
+                <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain object-left scale-[2.5] origin-left" />
               </div>
             </Link>
             <p className="text-text-body mb-6">
