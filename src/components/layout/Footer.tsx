@@ -12,7 +12,7 @@ export default function Footer() {
           <div suppressHydrationWarning>
             <Link href="/" className="flex items-center gap-2.5 mb-4 group">
               <div className="relative w-10 h-10 overflow-hidden flex-shrink-0">
-                <Image src="/icon.png" alt="Warsi WebWorks Logo" fill className="object-contain" />
+                <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain" />
               </div>
               <div className="flex flex-col justify-center leading-[1.1] text-text-primary">
                 <span className="font-black text-[18px] tracking-tight">Warsi</span>

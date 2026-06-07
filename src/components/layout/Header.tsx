@@ -46,7 +46,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 z-50 group">
           <div className="relative w-10 h-10 overflow-hidden flex-shrink-0">
-            <Image src="/icon.png" alt="Warsi WebWorks Logo" fill className="object-contain" priority />
+            <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain" priority />
           </div>
           <div className="flex flex-col justify-center leading-[1.1] text-text-primary">
             <span className="font-black text-[18px] tracking-tight">Warsi</span>
