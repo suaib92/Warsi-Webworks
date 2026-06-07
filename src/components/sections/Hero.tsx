@@ -23,17 +23,17 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-base pt-24 lg:pt-0">
-      
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-base pt-32 lg:pt-18 pb-16">
+
       {/* Mobile/Tablet Fallback: Absolute ambient CSS glows behind content */}
       <div className="absolute inset-0 lg:hidden -z-10 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent/10 via-base to-base" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[90vh]">
-          
+
           {/* Left Column: Massive Cinematic Typography & Trust Elements */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left order-2 lg:order-1 relative z-20">
-            
+
             {/* Trust Badges */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -57,7 +57,7 @@ export default function Hero() {
                 <span className="text-xs font-bold text-accent-light uppercase tracking-wider">Website Development Company Moradabad</span>
               </div>
             </motion.div>
-            
+
             {/* Headline */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ export default function Hero() {
                 </span>
               </h1>
             </motion.div>
-            
+
             {/* Subheadline (H2 for SEO) */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
