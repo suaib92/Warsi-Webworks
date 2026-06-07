@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "@/data/blog";
 import { applyInternalLinks } from "@/utils/internalLinker";
@@ -159,8 +160,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* EEAT Author Credentials Block */}
             <div className="mt-16 pt-12 border-t border-border-subtle/50">
               <div className="bg-card border border-border-subtle p-8 rounded-[16px] flex flex-col md:flex-row gap-8 items-start md:items-center">
-                <div className="w-24 h-24 shrink-0 rounded-full bg-accent flex items-center justify-center text-white font-bold text-4xl shadow-lg shadow-accent/20 border-4 border-card">
-                  {post.author.name.charAt(0)}
+                <div className="w-24 h-24 shrink-0 rounded-full bg-accent flex items-center justify-center text-white font-bold text-4xl shadow-lg shadow-accent/20 border-4 border-card overflow-hidden relative">
+                  <Image src="/images/suaib.jpeg" alt={post.author.name} fill className="object-cover" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-text-primary mb-2">About {post.author.name}</h3>
