@@ -45,8 +45,8 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center z-50 group flex-shrink-0">
-          <div className="relative w-28 h-9 sm:w-36 sm:h-11 md:w-48 md:h-14 overflow-visible">
-            <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain object-left scale-[1.8] sm:scale-[2] md:scale-[2.5] origin-left" priority />
+          <div className="relative w-[160px] h-[45px] sm:w-[180px] sm:h-[45px] md:w-[220px] md:h-[55px] overflow-visible">
+            <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain object-left scale-[2.5] origin-left" priority />
           </div>
         </Link>
 
