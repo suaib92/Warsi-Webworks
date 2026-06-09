@@ -6,13 +6,13 @@ import { Globe, MessageCircle, MapPin, Phone, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-surface border-t border-border-section pt-16 pb-8 text-text-primary">
-      <div className="container mx-auto px-4 md:px-6" suppressHydrationWarning>
+      <div className="w-full px-4 md:px-6" suppressHydrationWarning>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12" suppressHydrationWarning>
           {/* Brand */}
           <div suppressHydrationWarning>
             <Link href="/" className="flex items-center mb-6 group">
-              <div className="relative w-64 h-16 overflow-visible flex-shrink-0">
-                <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain object-left scale-[2.5] origin-left" />
+              <div className="relative w-[200px] h-[48px] md:w-[320px] md:h-[76px]">
+                <Image src="/images/logo.webp" alt="Warsi WebWorks Logo" fill className="object-contain object-left" />
               </div>
             </Link>
             <p className="text-text-body mb-6">

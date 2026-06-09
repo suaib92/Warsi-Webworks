@@ -121,32 +121,14 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": `Do you provide ${s.title} services in ${s.cityName}?`,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": `Yes, Warsi WebWorks provides expert ${s.title} services for businesses in ${s.cityName} and the surrounding regions.`
-          }
-        },
-        {
-          "@type": "Question",
-          "name": `How much does ${s.title} cost in ${s.cityName}?`,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": `The cost of ${s.title} depends on your specific requirements. We offer competitive, ROI-focused pricing for ${s.cityName} businesses. Contact us for a free quote.`
-          }
-        },
-        {
-          "@type": "Question",
-          "name": `Why choose Warsi WebWorks for ${s.title}?`,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": `We are a premium digital engineering studio offering custom ${s.title} solutions with perfect Core Web Vitals, scalable architecture, and SEO optimization.`
-          }
+      "mainEntity": s.faqs ? s.faqs.map((faq: { q: string, a: string }) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
         }
-      ]
+      })) : []
     }
   ];
 
@@ -248,18 +230,12 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
       <section className="container mx-auto px-6 md:px-12 max-w-4xl mb-24">
         <h2 className="text-3xl md:text-4xl font-bold text-text-primary tracking-tight mb-8">Frequently Asked Questions</h2>
         <div className="space-y-6">
-          <div className="bg-card border border-border-subtle p-6 rounded-lg">
-            <h3 className="text-xl font-bold text-text-primary mb-3">Do you provide {s.title} services in {s.cityName}?</h3>
-            <p className="text-text-body">Yes, Warsi WebWorks provides expert {s.title} services for businesses in {s.cityName} and the surrounding regions.</p>
-          </div>
-          <div className="bg-card border border-border-subtle p-6 rounded-lg">
-            <h3 className="text-xl font-bold text-text-primary mb-3">How much does {s.title} cost in {s.cityName}?</h3>
-            <p className="text-text-body">The cost of {s.title} depends on your specific requirements. We offer competitive, ROI-focused pricing for {s.cityName} businesses. Contact us for a free quote.</p>
-          </div>
-          <div className="bg-card border border-border-subtle p-6 rounded-lg">
-            <h3 className="text-xl font-bold text-text-primary mb-3">Why choose Warsi WebWorks for {s.title}?</h3>
-            <p className="text-text-body">We are a premium digital engineering studio offering custom {s.title} solutions with perfect Core Web Vitals, scalable architecture, and SEO optimization.</p>
-          </div>
+          {s.faqs && s.faqs.map((faq: { q: string, a: string }, i: number) => (
+            <div key={i} className="bg-card border border-border-subtle p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-text-primary mb-3">{faq.q}</h3>
+              <p className="text-text-body leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -1,6 +1,4 @@
-"use client";
 
-import { motion } from "framer-motion";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const faqs = [
@@ -48,33 +46,20 @@ export default function FAQ() {
       />
       <div className="container mx-auto px-6 md:px-12 max-w-4xl">
         <div className="text-center mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
+          <p             className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
           >
             FAQ
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold text-text-primary tracking-tighter"
+          </p>
+          <h2             className="text-4xl md:text-6xl font-bold text-text-primary tracking-tighter"
           >
             Frequently Asked Questions.
-          </motion.h2>
+          </h2>
         </div>
 
         <Accordion className="space-y-4">
           {faqs.map((faq, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
             >
               <AccordionItem className="bg-card border border-border-subtle rounded-[12px] px-6 py-2">
                 <AccordionTrigger className="text-[17px] font-semibold text-text-primary py-4">
@@ -84,7 +69,7 @@ export default function FAQ() {
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
-            </motion.div>
+            </div>
           ))}
         </Accordion>
       </div>

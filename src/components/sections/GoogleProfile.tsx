@@ -1,7 +1,5 @@
-"use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, MapPin, MessageSquareText, SearchCheck, Star } from "lucide-react";
 
 const googleProfileUrl = "https://share.google/6P3GYqa1EtX0ml1Sf";
@@ -79,44 +77,25 @@ export default function GoogleProfile() {
       <div className="container relative z-10 mx-auto px-6 md:px-12">
         <div className="mb-14 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <div>
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-4 text-xs font-bold uppercase text-accent"
+            <p               className="mb-4 text-xs font-bold uppercase text-accent"
             >
               Local proof
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.08 }}
-              className="max-w-4xl text-4xl font-black leading-[1.05] text-text-primary md:text-6xl"
+            </p>
+            <h2               className="max-w-4xl text-4xl font-black leading-[1.05] text-text-primary md:text-6xl"
             >
               Trusted by businesses that need Google to bring real leads.
-            </motion.h2>
+            </h2>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.16 }}
-            className="max-w-2xl text-base leading-[1.7] text-text-body md:justify-self-end md:text-lg"
+          <p             className="max-w-2xl text-base leading-[1.7] text-text-body md:justify-self-end md:text-lg"
           >
             Your website, Google Business Profile, and local SEO signals should
             work together. This is the trust layer clients check before they call.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden rounded-[8px] border border-border-subtle bg-card"
+          <div             className="overflow-hidden rounded-[8px] border border-border-subtle bg-card"
           >
             <div className="border-b border-border-subtle p-6 md:p-7">
               <div className="mb-8 flex items-start justify-between gap-5">
@@ -181,15 +160,10 @@ export default function GoogleProfile() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           <div className="grid gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="grid gap-px overflow-hidden rounded-[8px] border border-border-subtle bg-border-subtle md:grid-cols-2"
+            <div               className="grid gap-px overflow-hidden rounded-[8px] border border-border-subtle bg-border-subtle md:grid-cols-2"
             >
               <div className="bg-card p-6 md:p-7">
                 <SearchCheck className="mb-8 h-6 w-6 text-accent" />
@@ -212,16 +186,12 @@ export default function GoogleProfile() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
 
             <div className="flex gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:overflow-visible lg:pb-0">
               {reviews.map((review, index) => (
-                <motion.article
+                <article
                   key={review.author}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="grid min-w-[82vw] overflow-hidden rounded-[8px] border border-border-subtle bg-card transition-colors duration-300 hover:border-accent/60 hover:bg-card-hover sm:min-w-[560px] md:grid-cols-[180px_1fr] lg:min-w-0"
                 >
                   <div className={`relative min-h-[190px] overflow-hidden ${review.tone}`}>
@@ -248,7 +218,7 @@ export default function GoogleProfile() {
                       <span className="mt-1 block text-sm font-semibold text-text-muted">{review.role} · Google</span>
                     </cite>
                   </div>
-                </motion.article>
+                </article>
               ))}
             </div>
           </div>

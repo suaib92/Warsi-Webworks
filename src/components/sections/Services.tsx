@@ -1,9 +1,6 @@
 /* eslint-disable */
-"use client";
 
-import { useRef } from "react";
 import Link from "next/link";
-import { motion, type Variants } from "framer-motion";
 import { Code2, ShoppingCart, Smartphone, Search, Database, PenTool } from "lucide-react";
 
 const capabilities = [
@@ -51,23 +48,9 @@ const capabilities = [
   }
 ];
 
-const containerVariant: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
-
-const itemVariant: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
-};
-
 function CapabilityCard({ capability, index }: { capability: any; index: number }) {
   return (
-    <motion.div
-      variants={itemVariant}
+    <div
       className="group relative p-6 bg-card border border-border-subtle rounded-[12px] overflow-hidden hover:bg-card-hover hover:border-[#6c63ff44] transition-all duration-150"
     >
       <div className="relative z-10 flex flex-col h-full">
@@ -96,7 +79,7 @@ function CapabilityCard({ capability, index }: { capability: any; index: number 
           </svg>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -123,36 +106,23 @@ export default function Services() {
       <div className="container mx-auto px-6 md:px-12">
         
         <div className="max-w-4xl mb-24">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
+          <p             className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
           >
             Capabilities
-          </motion.p>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-bold text-text-primary tracking-tighter"
+          </p>
+          <h2             className="text-5xl md:text-6xl font-bold text-text-primary tracking-tighter"
           >
             Expert Digital Services <br className="hidden md:block" /> We Offer in UP.
-          </motion.h2>
+          </h2>
         </div>
 
-        <motion.div 
-          variants={containerVariant}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+        <div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {capabilities.map((cap, idx) => (
             <CapabilityCard key={cap.id} capability={cap} index={idx} />
           ))}
-        </motion.div>
+        </div>
 
       </div>
     </section>

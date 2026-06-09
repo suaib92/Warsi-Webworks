@@ -1,6 +1,4 @@
-"use client";
 
-import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { Float, PresentationControls, Environment, ContactShadows } from "@react-three/drei";
 import { Button } from "@/components/ui/button";
@@ -79,33 +77,21 @@ export default function Showcase() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <motion.h2 
+            <h2 
               className="text-3xl md:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
             >
               Immersive <span className="text-primary">Digital Experiences</span>
-            </motion.h2>
-            <motion.p 
+            </h2>
+            <p 
               className="text-muted-foreground text-lg mb-8 max-w-xl"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
             >
               We don&apos;t just build websites; we create interactive, high-performance digital products that captivate users. Leveraging cutting-edge technologies like WebGL and React, we deliver premium quality at scale.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
+            </p>
+            <div             >
               <Button size="lg" className="shadow-[0_0_15px_rgba(var(--primary),0.5)]">
                 Start Your Project
               </Button>
-            </motion.div>
+            </div>
           </div>
           
           <div className="h-[500px] w-full rounded-2xl overflow-hidden bg-card/20 backdrop-blur-sm border border-border/50 relative">

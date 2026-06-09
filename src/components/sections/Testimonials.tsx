@@ -1,7 +1,4 @@
-"use client";
 
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const getInitials = (name: string) => {
@@ -60,29 +57,20 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
 
   return (
     <section id="testimonials" className="py-24 bg-surface border-y border-border-section overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 mb-12 text-center">
-        <motion.h2 
+        <h2 
           className="text-3xl md:text-5xl font-bold text-text-primary tracking-tighter mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
         >
           Client <span className="text-accent">Success Stories</span>
-        </motion.h2>
-        <motion.p 
+        </h2>
+        <p 
           className="text-text-body text-lg max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
         >
           Don&apos;t just take our word for it. Hear from the founders and leaders across Uttar Pradesh who trust our engineering.
-        </motion.p>
+        </p>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4">
@@ -90,20 +78,13 @@ export default function Testimonials() {
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
 
-        <motion.div 
-          ref={containerRef}
-          className="flex cursor-grab active:cursor-grabbing gap-6 px-4"
-          drag="x"
-          dragConstraints={{ left: -1000, right: 0 }}
-          onDragStart={() => setIsDragging(true)}
-          onDragEnd={() => setIsDragging(false)}
+        <div 
+          className="flex gap-6 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8"
         >
           {testimonials.map((testimonial) => (
-            <motion.div 
+            <div 
               key={testimonial.id}
               className="min-w-[300px] md:min-w-[400px]"
-              whileHover={{ scale: isDragging ? 1 : 1.02 }}
-              transition={{ duration: 0.3 }}
             >
               <div className="bg-card border border-border-subtle rounded-[16px] h-full p-8 relative shadow-sm">
                 <Quote className="absolute top-6 right-6 w-12 h-12 text-accent/10" />
@@ -128,9 +109,9 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
         
         <div className="text-center mt-8 text-sm text-text-muted">
           &larr; Drag to scroll &rarr;

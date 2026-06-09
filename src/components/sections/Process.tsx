@@ -1,4 +1,3 @@
-/* eslint-disable */
 "use client";
 
 import { useRef } from "react";
@@ -15,12 +14,13 @@ const steps = [
 ];
 
 export default function Process() {
-  const targetRef = useRef(null);
+  const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-85%"]);
+  // Translate horizontal depending on how many steps there are
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-62%"]);
 
   return (
     <section className="bg-surface relative">
@@ -44,7 +44,7 @@ export default function Process() {
                   {step.id}
                 </span>
               </div>
-              
+
               {/* Content */}
               <div className="bg-card p-6 rounded-[12px] border border-border-subtle group-hover:bg-card-hover group-hover:border-[#6c63ff44] transition-all duration-300">
                 <h3 className="text-2xl font-bold text-text-primary mb-3">{step.title}</h3>
@@ -58,31 +58,20 @@ export default function Process() {
       {/* Desktop Layout (Horizontal Scroll) */}
       <div ref={targetRef} className="hidden md:block relative h-[400vh]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-          
+
           <div className="container mx-auto px-6 md:px-12 mb-12 absolute top-32 left-0 right-0 z-20">
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
-            >
+            <p className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4">
               How We Work
-            </motion.p>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-bold text-text-primary tracking-tighter"
-            >
+            </p>
+            <h2 className="text-4xl md:text-6xl font-bold text-text-primary tracking-tighter">
               The Engineering Process.
-            </motion.h2>
+            </h2>
           </div>
 
-          <motion.div style={{ x }} className="flex gap-12 md:gap-24 px-6 md:px-[10vw] pt-32">
+          <motion.div style={{ x }} className="flex gap-12 md:gap-24 px-6 md:px-[10vw] pt-32 w-[max-content]">
             {steps.map((step, i) => (
               <div key={step.id} className="relative w-[80vw] md:w-[40vw] lg:w-[30vw] flex-shrink-0 group">
-                
+
                 {/* Process Line */}
                 <div className="absolute top-8 left-0 right-[-3rem] md:right-[-6rem] h-[2px] bg-border-section -z-10">
                   <div className="h-full bg-accent w-0 group-hover:w-full transition-all duration-700 ease-out" />

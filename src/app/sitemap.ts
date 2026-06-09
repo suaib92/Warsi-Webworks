@@ -110,27 +110,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...locationUrls,
     ...[
-      "manufacturers", "doctors", "schools", "brass-industry", "real-estate", "startups"
-    ].flatMap(industry => [
-      {
-        url: `${base}/website-development-for-${industry}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-      },
-      {
-        url: `${base}/ecommerce-for-${industry}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-      },
-      {
-        url: `${base}/seo-services-for-${industry}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-      }
-    ]),
+      "website-development-for-manufacturers",
+      "website-development-for-doctors",
+      "website-development-for-schools",
+      "website-development-for-brass-industry",
+      "website-development-for-real-estate",
+      "website-development-for-startups",
+      "ecommerce-for-manufacturers",
+      "seo-services-for-manufacturers"
+    ].map(route => ({
+      url: `${base}/${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     {
       url: `${base}/blog`,
       lastModified: new Date(),

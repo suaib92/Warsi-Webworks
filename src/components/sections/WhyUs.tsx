@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 const stories = [
@@ -47,23 +46,14 @@ export default function WhyUs() {
           {/* Left: Sticky Context */}
           <div className="lg:col-span-5 relative mb-12 lg:mb-0">
             <div className="lg:sticky lg:top-32">
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
+              <p                 className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
               >
                 Why Warsi WebWorks
-              </motion.p>
-              <motion.h2 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl font-bold text-text-primary tracking-tighter mb-8 leading-[1.2]"
+              </p>
+              <h2                 className="text-4xl md:text-5xl font-bold text-text-primary tracking-tighter mb-8 leading-[1.2]"
               >
                 Why Choose Our <br /> Next.js & React Developers?
-              </motion.h2>
+              </h2>
               <p className="text-text-body text-xl max-w-md">
                 Standard agencies build websites. We build scalable digital ecosystems designed for total market dominance.
               </p>
@@ -77,12 +67,8 @@ export default function WhyUs() {
                 const isActive = activeStory === index;
                 
                 return (
-                  <motion.div 
+                  <div 
                     key={story.id}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ delay: index * 0.1 }}
                     onClick={() => setActiveStory(index)}
                     className={`cursor-pointer border-l-4 p-8 transition-all duration-300 rounded-r-xl ${
                       isActive 
@@ -99,9 +85,7 @@ export default function WhyUs() {
                       </h3>
                     </div>
                     
-                    <motion.div 
-                      initial={false}
-                      animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+                    <div
                       className="overflow-hidden"
                     >
                       <p className="text-text-body text-lg leading-relaxed mt-4 mb-6">
@@ -110,8 +94,8 @@ export default function WhyUs() {
                       <div className="inline-block px-4 py-1.5 bg-accent/10 text-accent-light text-sm font-semibold rounded-full">
                         {story.highlight}
                       </div>
-                    </motion.div>
-                  </motion.div>
+                    </div>
+                  </div>
                 );
               })}
             </div>

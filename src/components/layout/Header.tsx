@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <>
     <motion.header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full max-w-full z-50 transition-all duration-300 ${
         isScrolled || mobileMenuOpen
           ? "bg-base/85 backdrop-blur-xl border-b border-border-section shadow-sm"
           : "bg-transparent"
@@ -42,11 +42,11 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+      <div className="w-full px-4 md:px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center z-50 group flex-shrink-0">
-          <div className="relative w-[160px] h-[45px] sm:w-[180px] sm:h-[45px] md:w-[220px] md:h-[55px] overflow-visible">
-            <Image src="/images/logo.png" alt="Warsi WebWorks Logo" fill className="object-contain object-left scale-[2.5] origin-left" priority />
+        <Link href="/" className="flex items-center z-50 group">
+          <div className="relative w-[346px] h-[87px] sm:w-[432px] sm:h-[108px] md:w-[518px] md:h-[130px]">
+            <Image src="/images/logo.webp" alt="Warsi WebWorks Logo" fill className="object-contain object-left" priority />
           </div>
         </Link>
 
@@ -72,7 +72,7 @@ export default function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden z-50 text-text-primary"
+          className="md:hidden z-50 text-text-primary me-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle mobile menu"
           aria-expanded={mobileMenuOpen}

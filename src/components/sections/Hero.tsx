@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, Gauge, Search, Star, TrendingUp } from "lucide-react";
 
 const featuredWork = [
@@ -26,21 +23,13 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,15,15,0.055)_1px,transparent_1px),linear-gradient(180deg,rgba(15,15,15,0.045)_1px,transparent_1px)] bg-[size:72px_72px]" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/75 to-transparent" />
-        <div
-          className="absolute inset-0 opacity-[0.025] mix-blend-multiply"
-          style={{ backgroundImage: "url('/images/noise.png')", backgroundRepeat: "repeat" }}
-        />
+
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 h-full flex flex-col justify-center">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14 min-h-[82vh]">
           <div className="w-full lg:w-7/12 flex flex-col justify-center text-left relative z-20 pointer-events-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-wrap items-center gap-3 mb-8"
-            >
+            <div className="flex flex-wrap items-center gap-3 mb-8">
               <div className="flex items-center gap-2 bg-card/90 border border-border-subtle rounded-[8px] px-4 py-2">
                 <div className="flex -space-x-1">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -56,37 +45,23 @@ export default function Hero() {
                 <TrendingUp className="w-4 h-4 text-[#0d7a4f]" />
                 <span className="text-xs font-bold text-[#0d5f40] uppercase">Website Development Company Moradabad</span>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            >
+            <div className="mt-8">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.98] text-text-primary uppercase">
                 WEBSITES THAT TURN<br />
                 <span className="text-accent">VISITORS</span><br />
                 INTO CUSTOMERS
               </h1>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-8"
-            >
+            <div className="mt-8">
               <h2 className="text-lg md:text-2xl text-text-body font-medium max-w-2xl leading-[1.65]">
                 <strong className="text-text-primary font-bold">Premium Website Development Company in Moradabad.</strong> Engineering high-performance digital solutions that rank, convert, and scale.
               </h2>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-12"
-            >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-12">
               <Link href="/#contact" className="w-full sm:w-auto h-14 px-8 inline-flex items-center justify-center text-lg font-semibold bg-accent hover:bg-accent-hover text-white rounded-[8px] border-none transition-all duration-300 group shadow-[0_18px_45px_rgba(255,77,0,0.24)]">
                 Book Free Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -95,14 +70,9 @@ export default function Hero() {
                 View Work
                 <ArrowRight className="ml-2 w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-12 border-t border-border-subtle/50 w-full max-w-2xl"
-            >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-12 border-t border-border-subtle/50 w-full max-w-2xl">
               <div>
                 <h4 className="text-3xl font-black text-text-primary mb-1">5.0</h4>
                 <p className="text-xs text-text-muted uppercase font-semibold">Google Reviews</p>
@@ -119,16 +89,11 @@ export default function Hero() {
                 <h4 className="text-3xl font-black text-text-primary mb-1">&lt;1h</h4>
                 <p className="text-xs text-text-muted uppercase font-semibold">Response Time</p>
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 36 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-5/12 relative pointer-events-auto"
-          >
-            <div className="relative mx-auto w-full max-w-[560px]">
+          <div className="w-full lg:w-5/12 relative pointer-events-auto">
+              <div className="relative mx-auto w-full max-w-[560px]">
               <div className="absolute -left-4 top-12 hidden h-28 w-28 border border-[#0f0f0f]/10 bg-[#dff3ff] md:block" />
               <div className="absolute -right-5 bottom-14 hidden h-32 w-24 border border-[#0f0f0f]/10 bg-[#e7f6ef] md:block" />
 
@@ -196,7 +161,7 @@ export default function Hero() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

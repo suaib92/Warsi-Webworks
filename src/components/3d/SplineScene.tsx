@@ -1,7 +1,7 @@
 /* eslint-disable */
 "use client";
 
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useState, useEffect, useRef } from "react";
 
 // Lazy load the Spline component to avoid blocking critical render paths (~500KB runtime)
 const Spline = lazy(() => import("@splinetool/react-spline"));
@@ -21,6 +21,26 @@ interface SplineSceneProps {
  */
 export function SplineScene({ scene, className = "", onLoad }: SplineSceneProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" } // Load slightly before it comes into view
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleLoad = (app: any) => {
     setIsLoaded(true);
@@ -30,7 +50,7 @@ export function SplineScene({ scene, className = "", onLoad }: SplineSceneProps)
   };
 
   return (
-    <div className={`relative w-full h-full min-h-[400px] overflow-hidden ${className}`}>
+    <div ref={containerRef} className={`relative w-full h-full min-h-[400px] overflow-hidden ${className}`}>
       {/* Sleek, premium loader visible until scene resolves */}
       {!isLoaded && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-background/30 backdrop-blur-md z-15 transition-opacity duration-700">
@@ -47,15 +67,17 @@ export function SplineScene({ scene, className = "", onLoad }: SplineSceneProps)
         </div>
       )}
 
-      {/* 3D Spline Canvas */}
-      <Suspense fallback={null}>
-        <div 
-          className="w-full h-full transition-opacity duration-1000 ease-out"
-          style={{ opacity: isLoaded ? 1 : 0 }}
-        >
-          <Spline scene={scene} onLoad={handleLoad} />
-        </div>
-      </Suspense>
+      {/* 3D Spline Canvas - ONLY load if in view */}
+      {isInView && (
+        <Suspense fallback={null}>
+          <div 
+            className="w-full h-full transition-opacity duration-1000 ease-out"
+            style={{ opacity: isLoaded ? 1 : 0 }}
+          >
+            <Spline scene={scene} onLoad={handleLoad} />
+          </div>
+        </Suspense>
+      )}
     </div>
   );
 }

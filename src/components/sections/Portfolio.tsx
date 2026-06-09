@@ -1,8 +1,6 @@
-"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, BarChart3, Gauge, MonitorSmartphone } from "lucide-react";
 
 const projects = [
@@ -75,31 +73,17 @@ export default function Portfolio() {
       <div className="container relative z-10 mx-auto px-6 md:px-12">
         <div className="mb-14 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
           <div>
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-4 text-xs font-bold uppercase text-accent"
+            <p               className="mb-4 text-xs font-bold uppercase text-accent"
             >
               Selected work
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.08 }}
-              className="max-w-4xl text-4xl font-black leading-[1.05] text-text-primary md:text-6xl"
+            </p>
+            <h2               className="max-w-4xl text-4xl font-black leading-[1.05] text-text-primary md:text-6xl"
             >
               Websites that look premium and work under pressure.
-            </motion.h2>
+            </h2>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.16 }}
-            className="max-w-xl lg:justify-self-end"
+          <div             className="max-w-xl lg:justify-self-end"
           >
             <p className="text-base leading-[1.7] text-text-body md:text-lg">
               Every build below is designed around the business outcome first:
@@ -112,15 +96,10 @@ export default function Portfolio() {
               View full portfolio
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.article
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="overflow-hidden rounded-[8px] border border-border-subtle bg-card transition-colors duration-300 hover:border-accent/60 hover:bg-card-hover"
+        <article           className="overflow-hidden rounded-[8px] border border-border-subtle bg-card transition-colors duration-300 hover:border-accent/60 hover:bg-card-hover"
         >
           <Link href={`/portfolio/${featured.slug}`} className="group grid lg:grid-cols-[1.15fr_0.85fr]">
             <div className="relative min-h-[330px] overflow-hidden bg-base md:min-h-[470px]">
@@ -174,16 +153,12 @@ export default function Portfolio() {
               </div>
             </div>
           </Link>
-        </motion.article>
+        </article>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           {supporting.map((project, index) => (
-            <motion.article
+            <article
               key={project.id}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="overflow-hidden rounded-[8px] border border-border-subtle bg-card transition-colors duration-300 hover:border-accent/60 hover:bg-card-hover"
             >
               <Link href={`/portfolio/${project.slug}`} className="group block">
@@ -223,7 +198,7 @@ export default function Portfolio() {
                   </div>
                 </div>
               </Link>
-            </motion.article>
+            </article>
           ))}
         </div>
 

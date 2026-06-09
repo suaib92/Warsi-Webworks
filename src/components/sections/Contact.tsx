@@ -1,9 +1,7 @@
-/* eslint-disable */
 "use client";
 
-import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { useState } from "react";
+import { Phone, Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -75,31 +73,17 @@ export default function Contact() {
           
           {/* Left: Contact Details */}
           <div className="flex flex-col justify-center">
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
+            <p               className="text-text-muted font-semibold tracking-[0.08em] uppercase text-[11px] mb-4"
             >
               Start A Project
-            </motion.p>
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold text-text-primary tracking-tighter mb-12"
+            </p>
+            <h2               className="text-5xl md:text-7xl font-bold text-text-primary tracking-tighter mb-12"
             >
               Let's engineer <br /> your next unfair advantage.
-            </motion.h2>
+            </h2>
 
             <div className="space-y-8">
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="flex items-start gap-6 group cursor-pointer"
+              <div                 className="flex items-start gap-6 group cursor-pointer"
               >
                 <div className="w-14 h-14 bg-card border border-border-subtle rounded-[12px] flex items-center justify-center group-hover:bg-card-hover group-hover:border-accent-light transition-all">
                   <Phone className="w-6 h-6 text-accent-light" />
@@ -110,14 +94,9 @@ export default function Contact() {
                     +91 7078719621
                   </a>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex items-start gap-6 group cursor-pointer"
+              <div                 className="flex items-start gap-6 group cursor-pointer"
               >
                 <div className="w-14 h-14 bg-card border border-border-subtle rounded-[12px] flex items-center justify-center group-hover:bg-card-hover group-hover:border-accent-light transition-all">
                   <MapPin className="w-6 h-6 text-accent-light" />
@@ -128,17 +107,12 @@ export default function Contact() {
                     Moradabad, UP, India
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
 
           {/* Right: Premium Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="bg-card border border-border-subtle rounded-[12px] p-8 md:p-12 relative"
+          <div             className="bg-card border border-border-subtle rounded-[12px] p-8 md:p-12 relative"
             suppressHydrationWarning
           >
             {isSuccess ? (
@@ -220,7 +194,7 @@ export default function Contact() {
                 </button>
               </form>
             )}
-          </motion.div>
+          </div>
 
         </div>
       </div>
