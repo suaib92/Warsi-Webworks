@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { baseServices, cities, cityData, descriptions, getSpintax } from "@/data/services";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import InternalLinks from "@/components/seo/InternalLinks";
+import ServiceLocationsMatrix from "@/components/seo/ServiceLocationsMatrix";
 
 // Generate all combinations
 export async function generateStaticParams() {
@@ -240,6 +241,11 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
       </section>
 
       <section className="container mx-auto px-6 md:px-12 max-w-6xl mb-24">
+        <ServiceLocationsMatrix 
+          baseServiceSlug={s.serviceSlug} 
+          baseServiceTitle={s.title} 
+          currentCitySlug={s.citySlug} 
+        />
         <InternalLinks category="service" currentSlug={s.serviceSlug} />
 
         <div className="mt-12 text-center">

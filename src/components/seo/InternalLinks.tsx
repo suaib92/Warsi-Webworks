@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Calculator, FileText, Lightbulb, Mail, PenTool, QrCode, Sparkles } from "lucide-react";
-import { baseServices } from "@/data/services";
+import { baseServices, cities } from "@/data/services";
 import { blogPosts } from "@/data/blog";
 
 export type PageCategory = "home" | "service" | "blog" | "tool" | "industry";
@@ -89,10 +89,13 @@ export default function InternalLinks({ category, currentSlug }: InternalLinksPr
   if (category !== "home") links.push({ title: "About Us", url: "/about", anchor: "About Our Agency" });
 
   // Gather Services
+  const isCitySlug = cities.includes(currentSlug || "");
+  const targetCity = isCitySlug ? currentSlug : "moradabad";
+
   const servicesList = Object.entries(baseServices).map(([slug, s]) => ({
     title: s.title,
-    url: `/services/${slug}-moradabad`,
-    anchor: `${s.title} Services`
+    url: `/services/${slug}-${targetCity}`,
+    anchor: `${s.title} in ${targetCity!.charAt(0).toUpperCase() + targetCity!.slice(1)}`
   }));
 
   // Gather Blogs

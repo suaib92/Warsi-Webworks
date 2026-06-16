@@ -3,13 +3,7 @@ import Link from "next/link";
 import { MapPin, Code2, Search, Smartphone, ShoppingCart } from "lucide-react";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import InternalLinks from "@/components/seo/InternalLinks";
-
-// Target cities within 100km of Moradabad
-const cities = [
-  "rampur", "sambhal", "amroha", "bijnor", "kashipur", 
-  "rudrapur", "bareilly", "haldwani", "gajraula", "chandausi", 
-  "bilari", "thakurdwara", "joya", "hasanpur"
-];
+import { cities, cityData } from "@/data/services";
 
 // Helper to format city names (e.g., "new-york" -> "New York")
 function formatCityName(slug: string) {
@@ -17,7 +11,7 @@ function formatCityName(slug: string) {
 }
 
 export async function generateStaticParams() {
-  return cities.map((city) => ({
+  return cities.filter(c => c !== "moradabad").map((city) => ({
     city: city,
   }));
 }
@@ -38,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
 export default async function LocationPage({ params }: { params: Promise<{ city: string }> }) {
   const { city } = await params;
   const cityName = formatCityName(city);
+  const info = cityData[city] || { region: "Uttar Pradesh", population: "growing", industry: "local commerce" };
 
   const jsonLd = [
     {
@@ -128,8 +123,11 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <h1 className="text-5xl md:text-7xl font-bold text-text-primary tracking-tighter mb-8 leading-tight">
           Premium Website Development in {cityName}.
         </h1>
-        <p className="text-xl text-text-body leading-relaxed max-w-3xl mb-10">
+        <p className="text-xl text-text-body leading-relaxed max-w-3xl mb-6">
           We engineer high-performance websites, scalable React web applications, and conversion-optimized ecommerce stores for ambitious businesses in {cityName}, UP.
+        </p>
+        <p className="text-lg text-text-body leading-relaxed max-w-3xl mb-10 bg-surface/50 p-6 rounded-lg border-l-4 border-accent">
+          As a major hub in the {info.region} region, {cityName} is home to a population of over {info.population}. The local economy is driven by {info.industry}. We provide the exact technical infrastructure needed for {info.industry} businesses to scale digitally and outpace competitors.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link href="/contact" className="bg-accent hover:bg-accent-hover text-white font-bold px-8 py-4 rounded-[8px] transition-colors">

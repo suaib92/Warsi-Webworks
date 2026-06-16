@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Add specific 404 redirects here once identified in GSC
+      // {
+      //   source: '/old-url',
+      //   destination: '/new-url',
+      //   permanent: true,
+      // },
+    ];
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);
