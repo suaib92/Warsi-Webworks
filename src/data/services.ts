@@ -57,6 +57,16 @@ export const descriptions = {
     "Dominate Google's search algorithms. Our technical SEO services in {city} combine forensic audits, semantic schema engineering, and programmatic content strategy to drive high-value organic procurement traffic.",
     "Systematically outrank your competitors in {city}. We implement data-driven local SEO, rigorous Core Web Vitals optimization, and advanced JSON-LD markup for sustained, compounding growth.",
     "Stop losing lucrative contracts to page two of Google. Our technical SEO engineers in {city} deploy high-performance search strategies that capture high-intent, bottom-of-the-funnel B2B traffic."
+  ],
+  "shopify-development": [
+    "Scale your online retail business with expert Shopify developers in {city}. We build custom, high-converting Shopify Plus stores tailored for massive growth.",
+    "Looking for headless Shopify experts in {city}? We engineer ultra-fast e-commerce experiences that dominate Core Web Vitals and drastically reduce cart abandonment.",
+    "Seamlessly migrate to Shopify or build from scratch with {city}'s premier e-commerce agency. We handle complex inventory integrations and custom theme development."
+  ],
+  "wordpress-development": [
+    "Upgrade your digital presence with custom WordPress development in {city}. We abandon slow, bloated templates to engineer fast, highly secure, and deeply optimized WordPress architectures.",
+    "Need expert WooCommerce developers in {city}? We build scalable, conversion-focused online stores that provide full ownership of your data and zero vendor lock-in.",
+    "Dominate local search in {city} with a blazing-fast Headless WordPress build. Combine the familiar WordPress backend with a cutting-edge React frontend for ultimate performance."
   ]
 };
 
@@ -488,5 +498,111 @@ Finally, we architect massive topical authority. In the B2B and manufacturing se
       }
     ],
     industryApplications: "Our technical SEO methodologies drive revenue across highly competitive verticals. For Large-Scale Manufacturers and Exporters, we deploy programmatic SEO to dominate global procurement queries for obscure technical components. For Healthcare and Financial institutions (YMYL - Your Money or Your Life sectors), we rigorously engineer EEAT signals to satisfy Google's strictest algorithmic trust requirements. For Enterprise E-commerce, we manage complex crawl budgets, ensuring that millions of dynamic product pages are indexed correctly without cannibalizing each other."
+  },
+  "shopify-development": {
+    title: "Shopify Development",
+    h1: "Expert Shopify & Shopify Plus Development in",
+    tagline: "Custom Shopify storefronts engineered for high-volume sales and seamless conversions.",
+    features: [
+      "Headless Shopify architecture using Next.js and React",
+      "Custom Liquid theme development abandoning bloated templates",
+      "Seamless migration from WooCommerce, Magento, or BigCommerce",
+      "Complex ERP, CRM, and bespoke inventory management API integrations",
+      "Custom private Shopify App development for unique business logic",
+      "Rigorous Core Web Vitals optimization specifically for Shopify"
+    ],
+    benefits: [
+      "Drastically increased conversion rates due to sub-second load times",
+      "Infinite scalability capable of handling massive Black Friday traffic spikes",
+      "Limitless customization beyond the constraints of standard Shopify themes",
+      "Flawless checkout experiences that eliminate cart abandonment friction"
+    ],
+    extendedOverview: "Shopify has revolutionized e-commerce, but relying on an out-of-the-box theme is no longer sufficient to compete in a crowded digital marketplace. Off-the-shelf themes are often bloated with unnecessary code that destroys load speeds and limits your ability to implement custom business logic. For brands processing thousands of orders or dealing with complex inventory synchronizations, a custom-engineered Shopify solution is mandatory.\n\nWe specialize in advanced Shopify and Shopify Plus development. Whether you need a fully custom Liquid theme or a cutting-edge Headless Shopify architecture using Next.js, we build platforms that are uncompromisingly fast and tailored precisely to your operational needs. We handle the heavy technical lifting: migrating massive product catalogs without losing SEO traffic, integrating legacy ERP systems, and building custom private apps to extend Shopify's native functionality.",
+    methodology: [
+      {
+        title: "Phase 1: Discovery & Architecture",
+        desc: "We map out your complex product catalogs, required third-party integrations, and migration requirements to define a robust, scalable Shopify architecture."
+      },
+      {
+        title: "Phase 2: Custom UI/UX Design",
+        desc: "We design high-fidelity, conversion-optimized storefronts that reflect your brand's unique identity, moving far beyond the limitations of generic themes."
+      },
+      {
+        title: "Phase 3: Development & Integration",
+        desc: "Our engineers build the frontend utilizing advanced Liquid or Next.js, while securely connecting your store to essential ERP, CRM, and fulfillment APIs."
+      },
+      {
+        title: "Phase 4: Optimization & QA",
+        desc: "We subject the store to rigorous speed optimization and load testing, ensuring perfect performance across all devices and network conditions."
+      },
+      {
+        title: "Phase 5: Seamless Launch",
+        desc: "We manage the entire deployment process, ensuring zero downtime and protecting your existing organic search rankings during platform migrations."
+      }
+    ],
+    faqs: [
+      {
+        q: "Should we use standard Shopify or Headless Shopify?",
+        a: "Standard Shopify with a custom Liquid theme is excellent for most mid-market brands. However, if you require sub-second load times, highly complex interactive elements, or want to unify multiple content platforms under one roof, a Headless Shopify architecture using Next.js is the superior enterprise choice."
+      },
+      {
+        q: "Can you migrate our existing WooCommerce store to Shopify?",
+        a: "Absolutely. We specialize in complex migrations. We securely transfer all customer data, order history, and product catalogs while implementing strict 301 redirect mapping to ensure you do not lose your hard-earned SEO traffic."
+      }
+    ],
+    industryApplications: "From high-fashion D2C brands requiring visually stunning headless storefronts to specialized B2B distributors needing custom tiered-pricing apps built on Shopify Plus, our engineering provides the technical foundation for massive e-commerce scale."
+  },
+  "wordpress-development": {
+    title: "WordPress Development",
+    h1: "High-Performance WordPress Development in",
+    tagline: "Secure, custom-coded WordPress architectures that abandon bloated templates.",
+    features: [
+      "100% Custom WordPress theme development from scratch",
+      "Headless WordPress implementation utilizing Next.js/React",
+      "Advanced WooCommerce scalability engineering",
+      "Deep security hardening and vulnerability patching",
+      "Rigorous Core Web Vitals and page speed optimization",
+      "Custom plugin development for bespoke business requirements"
+    ],
+    benefits: [
+      "Total ownership and control of your digital property without vendor lock-in",
+      "Lightning-fast load times through optimized database queries and clean code",
+      "Iron-clad security that prevents hacks common to generic WordPress sites",
+      "Unmatched SEO flexibility to dominate local and global search rankings"
+    ],
+    extendedOverview: "WordPress powers over 40% of the web, but its reputation has been damaged by inexperienced developers using bloated templates and excessive plugins. A poorly built WordPress site is slow, constantly breaks during updates, and is highly vulnerable to security breaches. However, when engineered correctly from the ground up, WordPress remains one of the most powerful and flexible Content Management Systems in the world.\n\nWe do not use pre-built themes. We engineer custom WordPress architectures specifically for your business. By writing clean, modular code and eliminating unnecessary plugins, we deliver WordPress sites that achieve perfect Core Web Vitals scores. For enterprise clients requiring the ultimate performance, we offer Headless WordPress—combining the familiar, easy-to-use WordPress backend with a blazing-fast React/Next.js frontend.",
+    methodology: [
+      {
+        title: "Phase 1: Technical Scoping",
+        desc: "We analyze your requirements to determine the optimal database structure, necessary custom post types, and essential integrations."
+      },
+      {
+        title: "Phase 2: Bespoke Design",
+        desc: "Our design team crafts unique, conversion-focused user interfaces tailored precisely to your target audience."
+      },
+      {
+        title: "Phase 3: Custom Theme Engineering",
+        desc: "We translate the designs into a highly optimized, lightweight custom theme, avoiding the bloat of visual builders like Elementor."
+      },
+      {
+        title: "Phase 4: Security & Speed Hardening",
+        desc: "We implement rigorous caching layers, CDN integrations, and firewall configurations to guarantee maximum speed and security."
+      },
+      {
+        title: "Phase 5: Training & Deployment",
+        desc: "We provide your team with comprehensive training on the intuitive custom backend before seamlessly deploying the site."
+      }
+    ],
+    faqs: [
+      {
+        q: "Why shouldn't I just buy a $50 WordPress theme?",
+        a: "Cheap themes are built to appeal to everyone, meaning they are packed with thousands of lines of code and features you will never use. This bloat destroys your site's load speed, damages your SEO, and creates massive security vulnerabilities. A custom-built site only contains the exact code your business needs."
+      },
+      {
+        q: "Is WordPress secure enough for an enterprise business?",
+        a: "Yes, when engineered properly. The vast majority of WordPress hacks occur through outdated plugins or poorly coded generic themes. Our custom architectures, combined with rigorous server-side security hardening, make WordPress suitable for highly secure enterprise environments."
+      }
+    ],
+    industryApplications: "Our custom WordPress solutions serve high-traffic digital publishers requiring massive content scalability, service-based businesses needing highly optimized local SEO landing pages, and B2B enterprises that require complex, custom-built lead generation portals integrated directly with their CRM."
   }
 };

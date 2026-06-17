@@ -49,7 +49,22 @@ const services = [
     features: ["Technical SEO audits", "Core Web Vitals optimization", "Local SEO for Moradabad", "Content strategy"],
     slug: "seo-services-moradabad",
   },
+  {
+    id: "07",
+    title: "Shopify Development",
+    desc: "Custom Shopify storefronts engineered for high-volume sales and seamless conversions.",
+    features: ["Headless Shopify with Next.js", "Custom Liquid themes", "WooCommerce migrations", "Core Web Vitals optimization"],
+    slug: "shopify-development-moradabad",
+  },
+  {
+    id: "08",
+    title: "WordPress Development",
+    desc: "Secure, custom-coded WordPress architectures that abandon bloated templates.",
+    features: ["Custom themes from scratch", "Headless WordPress", "Advanced security hardening", "SEO & Page speed optimization"],
+    slug: "wordpress-development-moradabad",
+  }
 ];
+
 
 export default function ServicesPage() {
   return (

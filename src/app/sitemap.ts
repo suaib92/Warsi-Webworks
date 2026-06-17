@@ -15,7 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "react-development", 
     "nextjs-development", 
     "mobile-app-development", 
-    "seo-services"
+    "seo-services",
+    "shopify-development",
+    "wordpress-development"
   ];
 
   const allCities = [
